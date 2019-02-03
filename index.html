@@ -4,34 +4,28 @@
     <link rel="stylesheet" href="styles/index.css">  
 </head>   
 <body>
-<h1>
-   Happy Black History Month! 
-</h1>
-<div class="custom-controls">
-    <button data-playing="false" role="switch" aria-checked="false">
-        <span>Play/Pause</span>
-    </button>
-    <input type="range" id="volume" min="0" max="2" value="1" step="0.01" list="gain-vals"/>
-        <datalist id="gain-vals">
-            <option value="0" label="min">
-            <option value="2" label="max">
-        </datalist>
-        <label for="volume">VOL</label>
-    <input type="range" id="panner" min="-1" max="1" value="0" step="0.01" list="pan-vals"/>
-        <datalist id="pan-vals">
-            <option value="-1" label="left">
-            <option value="1" label="right">
-        </datalist>
-        <label for="pan">PAN</label>
+<div class="header">
+    <h1>
+        Happy Black History Month! 
+    </h1>
 </div>
-
 <div class="page-wrapper">
-    <div class="nav">
-        <a href="docs/playground">playground</a>
+    <div class="custom-controls"=>
+        <div class="audio">
+            <audio id="song" src="assets/koven-Never_Have_I_Felt_This[NCS].mp3" crossorigin="anonymous">
+        </div>
+        <button data-playing="false" role="switch" aria-checked="false">
+            <span>Play/Pause</span>
+        </button>
+        <input type="range" id="volume" min="0" max="2" value="1" step="0.01" list="gain-vals"/>
+            <label for="volume">VOL</label>
+        <input type="range" id="panner" min="-1" max="1" value="0" step="0.01" list="pan-vals"/>
+            <label for="pan">PAN</label>
+        <canvas id="audio-monitor" width="300" height="300">
+            An alternative text describing what your canvas displays. 
+        </canvas>
     </div>
-    <div class="audio">
-        <audio id="song" src="assets/koven-Never_Have_I_Felt_This[NCS].mp3" crossorigin="anonymous">
-    </div>
+  
     <div>
         <img src=" https://i.pinimg.com/originals/2b/6c/69/2b6c69c2c6fd2bd7c091696efbe57235.jpg"/>
         <img src="https://derpicdn.net/img/view/2012/10/14/121883__safe_solo_animated_edit_hub+logo_sonic+rainboom_avatar+the+last+airbender_avatar_atomic+rainboom_mushroom+cloud.gif"/>
@@ -48,10 +42,11 @@
 </body>
 <script>
 // Only use connect once because its like different connections
+// http-server -c-1
 window.onload = function() {
     const templateAudioContext = window.AudioContext || window.webkitAudioContext;
     var audioContext = new templateAudioContext();
-    var analyserNode = new AnalyserNode(audioContext);
+    var analyser = audioContext.createAnalyser();
 
     const audioElement = document.querySelector('audio');
     audioElement.play().then(response =>{
@@ -59,8 +54,9 @@ window.onload = function() {
     }).catch(e => {
         console.log(e);
     });
-    const track = audioContext.createMediaElementSource(audioElement);
 
+    const track = audioContext.createMediaElementSource(audioElement);
+    
     // select our play button
     const playButton = document.querySelector('button');
 
@@ -100,7 +96,51 @@ window.onload = function() {
     pannerControl.addEventListener('input', function() {
         panner.pan.value = this.value;
     }, false);
-    track.connect(gainNode).connect(panner).connect(audioContext.destination);
+
+    // analyzer code 
+    analyser.fftSize = 2048;
+    var bufferLength = analyser.frequencyBinCount;
+    var dataArray = new Uint8Array(bufferLength);
+    analyser.getByteTimeDomainData(dataArray);
+    analyser.minDecibels = -120;
+    analyser.maxDecibels = 10;
+
+    // Wire it up
+    track.connect(analyser).connect(gainNode).connect(panner).connect(audioContext.destination);
+    // Get a canvas defined with ID "oscilloscope"
+    var canvas = document.getElementById("audio-monitor");
+    var canvasCtx = canvas.getContext("2d");
+
+    // draw an oscilloscope of the current audio source
+    function draw() {
+        requestAnimationFrame(draw);
+        analyser.getByteTimeDomainData(dataArray);
+        canvasCtx.fillStyle = "rgb(200, 200, 200)";
+        canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+
+        canvasCtx.lineWidth = 2;
+        canvasCtx.strokeStyle = "rgb(0, 0, 0)";
+
+        canvasCtx.beginPath();
+
+        var sliceWidth = canvas.width * 1.0 / bufferLength;
+        var x = 0;
+        for (var i = 0; i < bufferLength; i++) {
+            var v = dataArray[i] / 128.0;
+            var y = v * canvas.height / 2;
+
+            if (i === 0) {
+            canvasCtx.moveTo(x, y);
+            } else {
+            canvasCtx.lineTo(x, y);
+            }
+
+            x += sliceWidth;
+        }
+        canvasCtx.lineTo(canvas.width, canvas.height / 2);
+        canvasCtx.stroke();
+    }
+    draw();
 }
 </script>
 </html>
