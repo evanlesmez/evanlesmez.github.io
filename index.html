@@ -2,30 +2,45 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles/index.css">  
+    <script src="scripts/audioController.js"></script>
 </head>   
 <body>
+<div class="nav-bar center-block">
+    <ul>
+        <li><a href="docs/gurus">gurus</a></li>
+        <li><a href="docs/idears">idears</a></li>
+        <li><a href="docs/playground">playground</a></li>
+    </ul>
+</div>
 <div class="header">
-    <h1>
-        Happy Black History Month! 
-    </h1>
+    <h1>Wubalubadubdub!</h1>
 </div>
 <div class="page-wrapper">
-    <div class="custom-controls"=>
-        <div class="audio">
-            <audio id="song" src="assets/koven-Never_Have_I_Felt_This[NCS].mp3" crossorigin="anonymous">
-        </div>
-        <button data-playing="false" role="switch" aria-checked="false">
-            <span>Play/Pause</span>
-        </button>
-        <input type="range" id="volume" min="0" max="2" value="1" step="0.01" list="gain-vals"/>
-            <label for="volume">VOL</label>
-        <input type="range" id="panner" min="-1" max="1" value="0" step="0.01" list="pan-vals"/>
-            <label for="pan">PAN</label>
-        <canvas id="audio-monitor" width="300" height="300">
-            An alternative text describing what your canvas displays. 
-        </canvas>
+    <div class="audio">
+        <audio id="song" src="assets/koven-Never_Have_I_Felt_This[NCS].mp3" crossorigin="anonymous">
     </div>
-  
+    <canvas class= "center-block" id="audio-monitor" width="600" height="300">
+            An alternative text describing what your canvas displays. 
+    </canvas>
+    <div class="custom-controls flex-container">
+        <div class="flex-item">
+            <button data-playing="false" role="switch" aria-checked="false">
+                <span>Play/Pause</span>
+            </button>
+        </div>
+        <div class="flex-item">
+            <div class="center-block">
+                <label for="volume">VOL</label>
+            </div>
+            <input type="range" id="volume" min="0" max="2" value="1" step="0.01" list="gain-vals"/>
+        </div>
+        <div class="flex-item">
+            <div class="center-block">
+                <label for="pan">PAN</label>
+            </div>
+            <input type="range" id="panner" min="-1" max="1" value="0" step="0.01" list="pan-vals"/>
+        </div>
+    </div>
     <div>
         <img src=" https://i.pinimg.com/originals/2b/6c/69/2b6c69c2c6fd2bd7c091696efbe57235.jpg"/>
         <img src="https://derpicdn.net/img/view/2012/10/14/121883__safe_solo_animated_edit_hub+logo_sonic+rainboom_avatar+the+last+airbender_avatar_atomic+rainboom_mushroom+cloud.gif"/>
@@ -40,5 +55,4 @@
     </div>
 </div>
 </body>
-<script src="./scripts/audioController.js"></script>
 </html>

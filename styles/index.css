@@ -1,3 +1,46 @@
+body{
+    background-color: #252525;
+    font-family:  "Andale Mono", AndaleMono, monospace;
+    color: white;
+}
 img {
     height:200px;
+}
+h1 {
+    text-align: center;
+}
+div.nav-bar {
+    color: lightPink !important;
+}
+div.nav-bar > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+div.nav-bar > ul > li {
+    display: inline;
+}
+li > a {
+    color:pink;
+    text-decoration: none;
+} 
+li > a:hover {
+    color: #FF69B4;
+}
+.center-block{
+    margin: 0 auto;
+    display: block;
+    text-align:center;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-item{
+    flex: 0 1 auto;
+}
+.custom-controls{
+    margin: 20px auto;
+    width: 600px;
 }
