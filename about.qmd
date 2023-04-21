@@ -15,5 +15,4 @@ about:
       href: https://github.com/evanlesmez/
 
 ---
-### Evan Lesmez
-This a blog about Ev's deep learning journey and random ideas 🐒
+This a blog about about Evan Lesmez's deep learning journey and random ideas 🐒
