@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://evanlesmez.com/index.html</loc>
-    <lastmod>2023-04-21T20:47:29.142Z</lastmod>
+    <lastmod>2023-04-21T21:19:52.380Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/posts/post-with-code/index.html</loc>
-    <lastmod>2023-04-21T20:47:29.325Z</lastmod>
+    <lastmod>2023-04-21T21:19:52.587Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/posts/welcome/index.html</loc>
-    <lastmod>2023-04-21T20:47:29.509Z</lastmod>
+    <lastmod>2023-04-21T21:19:52.777Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/first-post-fastai/index.html</loc>
+    <lastmod>2023-04-21T21:19:52.973Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/about.html</loc>
-    <lastmod>2023-04-21T20:47:29.835Z</lastmod>
+    <lastmod>2023-04-21T21:19:53.153Z</lastmod>
   </url>
 </urlset>

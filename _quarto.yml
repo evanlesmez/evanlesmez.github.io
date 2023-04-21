@@ -18,7 +18,9 @@ website:
   description: "Ev's blog"
 format:
   html:
-    theme: solar 
+    theme: 
+      light: default
+      dark: solar 
     css: styles.css
 
 

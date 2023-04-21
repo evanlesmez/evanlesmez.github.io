@@ -1,8 +1,0 @@
----
-draft: true
-title: "Code"
-author: "Evan Lesmez"
-date: "2023-04-21"
-# categories: [news, code, analysis]
-# image: "image.pg"
----
