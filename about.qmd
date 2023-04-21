@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Evan Lesmez"
 image: profile.jpg
 about:
   template: jolla
@@ -15,4 +15,4 @@ about:
       href: https://github.com/evanlesmez/
 
 ---
-This a blog about about Evan Lesmez's deep learning journey and random ideas 🐒
+This a blog about about Ev's deep learning journey and random ideas 🐒

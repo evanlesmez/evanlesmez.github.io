@@ -7,7 +7,8 @@ website:
   site-url: https://evanlesmez.com
   navbar:
     right:
-      - about.qmd
+      - text: "About"
+        file: about.qmd
       - icon: github
         href: https://github.com/evanlesmez
       # - icon: twitter

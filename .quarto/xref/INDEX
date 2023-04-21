@@ -10,5 +10,8 @@
   },
   "about.qmd": {
     "about.html": "62151560"
+  },
+  "posts/first-post-fastai/index.qmd": {
+    "index.html": "bc72b5bb"
   }
 }

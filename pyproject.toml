@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "evblog"
+version = "0.1.0"
+description = ""
+authors = ["Evan Lesmez <evan.lesmez@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jupyterlab = "^3.6.3"
+jupyterlab-quarto = "^0.1.43"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
