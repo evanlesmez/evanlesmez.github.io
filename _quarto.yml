@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ev's blog 🐒🐧🐍"
+  site-url: https://evanlesmez.com
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/evanlesmez
+      # - icon: twitter
+        # href: https://twitter.com
+      - icon: rss
+        href: index.xml
+  description: "Ev's blog"
+format:
+  html:
+    theme: solar 
+    css: styles.css
+
+
+

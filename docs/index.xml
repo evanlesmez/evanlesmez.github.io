@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Ev&#39;s blog 🐒🐧🐍</title>
+<link>https://evanlesmez.com/index.html</link>
+<atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
+<description>Ev&#39;s blog</description>
+<generator>quarto-1.2.475</generator>
+<lastBuildDate>Fri, 21 Apr 2023 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Post With Code</title>
+  <dc:creator>Harlow Malloc</dc:creator>
+  <link>https://evanlesmez.com/posts/post-with-code/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is a post with executable code.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://evanlesmez.com/posts/post-with-code/index.html</guid>
+  <pubDate>Fri, 21 Apr 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://evanlesmez.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Welcome To My Blog</title>
+  <dc:creator>Tristan O&#39;Malley</dc:creator>
+  <link>https://evanlesmez.com/posts/welcome/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is the first post in a Quarto blog. Welcome!</p>
+<p><img src="https://evanlesmez.com/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <guid>https://evanlesmez.com/posts/welcome/index.html</guid>
+  <pubDate>Tue, 18 Apr 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://evanlesmez.com/posts/welcome/thumbnail.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>
