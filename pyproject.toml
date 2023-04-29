@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.10"
 jupyterlab = "^3.6.3"
 jupyterlab-quarto = "^0.1.43"
+pillow = "^9.5.0"
 
 
 [build-system]

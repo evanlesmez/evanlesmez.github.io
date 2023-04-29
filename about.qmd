@@ -1,6 +1,6 @@
 ---
 title: "Evan Lesmez"
-image: profile.jpg
+image: DALL·E-solarpunk-nature-robot-leaf.png
 about:
   template: jolla
   links:
