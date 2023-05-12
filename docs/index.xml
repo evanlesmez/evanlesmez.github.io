@@ -10,7 +10,7 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Ev&#39;s blog</description>
 <generator>quarto-1.3.340</generator>
-<lastBuildDate>Fri, 21 Apr 2023 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 12 May 2023 04:00:00 GMT</lastBuildDate>
 <item>
   <title>First Steps: AI for Animal Advocacy with Fastai 🐇</title>
   <dc:creator>Evan Lesmez</dc:creator>
@@ -444,7 +444,7 @@ if (outputEl) {{
   <category>fastai</category>
   <category>deeplearning</category>
   <guid>https://evanlesmez.com/posts/2023-04-28-first-post-fastai/index.html</guid>
-  <pubDate>Fri, 21 Apr 2023 04:00:00 GMT</pubDate>
+  <pubDate>Fri, 12 May 2023 04:00:00 GMT</pubDate>
   <media:content url="https://evanlesmez.com/posts/2023-04-28-first-post-fastai/DALL·E-digital_art_cute_solarpunk_forest_guardian_robot.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
