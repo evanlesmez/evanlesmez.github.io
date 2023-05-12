@@ -19,9 +19,11 @@ website:
 format:
   html:
     theme: 
-      light: default
+      light: default 
       dark: solar 
     css: styles.css
+mainfont: HackNerdFont
+monofont: HackNerdFontMono
 
 
 

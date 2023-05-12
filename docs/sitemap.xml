@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://evanlesmez.com/index.html</loc>
-    <lastmod>2023-04-29T01:53:32.249Z</lastmod>
+    <loc>https://evanlesmez.com/about.html</loc>
+    <lastmod>2023-05-12T19:34:55.329Z</lastmod>
   </url>
   <url>
-    <loc>https://evanlesmez.com/about.html</loc>
-    <lastmod>2023-04-29T01:53:32.652Z</lastmod>
+    <loc>https://evanlesmez.com/index.html</loc>
+    <lastmod>2023-05-12T19:34:55.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/2023-04-28-first-post-fastai/index.html</loc>
+    <lastmod>2023-05-12T19:34:56.329Z</lastmod>
   </url>
 </urlset>
