@@ -1,5 +1,6 @@
 # Ev's blog
 
+https://evanlesmez.com  
 ## Built with [Quarto](https://quarto.org/)
 
 [Quart-CLI AUR package](https://aur.archlinux.org/packages/quarto-cli)  
