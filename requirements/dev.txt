@@ -1,0 +1,11 @@
+jupyterlab-code-formatter
+black
+isort
+jupyterlab-vim
+aquirdturtle_collapsible_headings
+jupyterlab-drawio
+jupyter-fs
+jupyterlab-spellchecker
+jupyter_ai
+jupyterlab-git
+# 'python-lsp-server[all]'

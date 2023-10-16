@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/2023-05-12-first-steps-fastai/index.html"
+      "/posts/01-ethics-of-tech/ethics-of-tech.html",
+      "/posts/00-first-steps-fastai/index.html"
     ]
   }
 ]

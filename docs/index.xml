@@ -9,12 +9,31 @@
 <link>https://evanlesmez.com/index.html</link>
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Ev&#39;s blog</description>
-<generator>quarto-1.3.340</generator>
-<lastBuildDate>Fri, 12 May 2023 04:00:00 GMT</lastBuildDate>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Fri, 08 Sep 2023 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Responsbility of tech creators</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/01-ethics-of-tech/ethics-of-tech.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+ ]]></description>
+  <category>ethics</category>
+  <category>ai</category>
+  <category>tech</category>
+  <guid>https://evanlesmez.com/posts/01-ethics-of-tech/ethics-of-tech.html</guid>
+  <pubDate>Fri, 08 Sep 2023 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>First Steps: AI for Animal Advocacy with Fastai 🐇</title>
   <dc:creator>Evan Lesmez</dc:creator>
-  <link>https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/index.html</link>
+  <link>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</link>
   <description><![CDATA[ 
 
 
@@ -50,7 +69,7 @@ font-style: inherit;">"Solar punk forest guardian source: DALLE·2"</span>,</spa
 <span id="cb1-9">)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/index_files/figure-html/cell-2-output-1.png" class="img-fluid"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/index_files/figure-html/cell-2-output-1.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
 <pre><code>'Solar punk forest guardian source: DALLE·2'</code></pre>
@@ -92,7 +111,7 @@ font-style: inherit;">"Castle in the Sky Guardian source: https://characterdesig
 <span id="cb3-7">)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/index_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/index_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
 <pre><code>'Castle in the Sky Guardian source: https://characterdesignreferences.com/art-of-animation-9/art-of-castle-in-the-sky'</code></pre>
@@ -121,7 +140,7 @@ font-style: inherit;">"Castle in the Sky Guardian source: https://characterdesig
 <p>Here’s a fun fact 🤓: A GPU isn’t necessarily required for a deployed model.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/plant-doc-hface.png" class="img-fluid figure-img"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/plant-doc-hface.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Screenshot of the plant-doc 🤗 space</figcaption>
 </figure>
 </div>
@@ -198,7 +217,7 @@ font-style: inherit;">5</span>))</span></code></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/hydro-dblock.png" class="img-fluid figure-img"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/hydro-dblock.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Labeled datablock</figcaption>
 </figure>
 </div>
@@ -217,7 +236,7 @@ font-style: inherit;">4</span>)</span></code></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/epoch-table-plant-doc.png" class="img-fluid figure-img"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/epoch-table-plant-doc.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Epoch table</figcaption>
 </figure>
 </div>
@@ -228,7 +247,7 @@ font-style: inherit;">4</span>)</span></code></pre></div>
 <p>For instance, the practice of maintaining a <strong>separate training set of data from a validation set</strong> (and a test set) seemed quite logical. The training set provides the model with a foundational understanding of correct answers, like labeled images. The validation set then serves as a quiz for your model, checking its comprehension of the patterns it has learned. In the context of an image classifier, the model must guess which label best matches a given image from the validation set, and then evaluate the confidence level of its correctness or error. This process facilitates the model’s improvement with each “epoch” or training cycle. Additionally, a completely separate test set, kept hidden from the model, can be used by humans to assess the model’s performance after training is completed.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/https:/assets-global.website-files.com/5d7b77b063a9066d83e1209c/61568656a13218cdde7f6166_training-data-validation-test.png" class="img-fluid figure-img"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/https:/assets-global.website-files.com/5d7b77b063a9066d83e1209c/61568656a13218cdde7f6166_training-data-validation-test.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Simplified model training through test diagram</figcaption>
 </figure>
 </div>
@@ -243,7 +262,7 @@ font-style: inherit;">=</span> ClassificationInterpretation.from_learner(learn)<
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/confusion_matrix.png" class="img-fluid figure-img"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/confusion_matrix.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Confusion matrix</figcaption>
 </figure>
 </div>
@@ -256,7 +275,7 @@ font-style: inherit;">5</span>)</span></code></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/top_losses_plot.png" class="img-fluid figure-img"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/top_losses_plot.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Plot of top losses</figcaption>
 </figure>
 </div>
@@ -279,7 +298,7 @@ font-style: inherit;">5</span>)</span></code></pre></div>
 <p>Non-profit organizations, particularly those advocating for animal rights, often face resource constraints that aren’t an issue for for-profit industries. Even within the landscape of animal non-profits, farmed animal activism <a href="https://animalcharityevaluators.org/donation-advice/why-farmed-animals/">receives only a fraction of the donations that shelters do</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/https:/animalcharityevaluators.org/wp-content/uploads/2013/12/donation-allocation-chart-fullsize-409x264@2x.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://evanlesmez.com/posts/00-first-steps-fastai/https:/animalcharityevaluators.org/wp-content/uploads/2013/12/donation-allocation-chart-fullsize-409x264@2x.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Chart of animals impacted and donations received for animal charities</figcaption>
 </figure>
 </div>
@@ -443,9 +462,9 @@ if (outputEl) {{
   <category>blog</category>
   <category>fastai</category>
   <category>deeplearning</category>
-  <guid>https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/index.html</guid>
+  <guid>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</guid>
   <pubDate>Fri, 12 May 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/DALL·E-digital_art_cute_solarpunk_forest_guardian_robot.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://evanlesmez.com/posts/00-first-steps-fastai/DALL·E-digital_art_cute_solarpunk_forest_guardian_robot.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>

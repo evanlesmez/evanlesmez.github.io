@@ -1,2 +1,4 @@
 /.quarto/
 .ipynb_checkpoint*
+
+/env/

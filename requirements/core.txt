@@ -1,0 +1,7 @@
+jupyterlab
+jupyterlab-quarto
+pillow
+pythreejs
+plotly
+ipywidgets
+matplotlib 
