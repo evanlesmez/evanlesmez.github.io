@@ -8,7 +8,7 @@
 
 <meta name="author" content="Evan Lesmez">
 <meta name="dcterms.date" content="2023-09-08">
-<meta name="description" content="Post description">
+<meta name="description" content="My notes and thoughts on Deep Learning for Coders: Chapter 3 data ethics">
 
 <title>Ev’s blog 🐒🐧🐍 - Algorithms inherit the prejudices of their creators and society.</title>
 <style>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Algorithms inherit the prejudices of their creators and society.</h1>
                   <div>
         <div class="description">
-          Post description
+          My notes and thoughts on Deep Learning for Coders: Chapter 3 data ethics
         </div>
       </div>
                           <div class="quarto-categories">
@@ -157,47 +157,72 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p><img src="ibm-ceo-tom-watson-sr-with-adolf.png" class="img-fluid" alt="IBM CEO Tom Watson Sr.&nbsp;with Adolf"><br>
+<strong>IBM leadership with Adolf Hitler</strong></p>
 <p>In 1939, IBM’s president Thomas Watson approved the release of the company’s specialized alphabetizing machines to help organize the deportation of Polish Jews for Nazi Germany.<br>
 The IBM executives strategically marketed directly to Hitler and his leadership team to setup the deal.<br>
-A few years earlier, IBM CEO Tom Watson Sr.&nbsp;was awarded a “Service to the Reich” medal. IBM setup a punchard system that tracked the way each person was killed and which ethnic group they belonged to.<br>
+A few years earlier, IBM CEO Tom Watson Sr.&nbsp;was awarded a “Service to the Reich” medal.<br>
+IBM setup a punchard system that tracked the way each person was killed and which ethnic group they belonged to.<br>
 These machines required training and maintenance so IBM employees would regularly show up onsite at concentration camps to operate and repair them. IBM was thriving financially and technologically, but at what cost to humanity?</p>
-<p><img src="ibm-ceo-tom-watson-sr-with-adolf.png" class="img-fluid" alt="IBM CEO Tom Watson Sr.&nbsp;with Adolf"> IBM leadership with Adolf. <img src="ibm-concentration-camp-punchcard.jpeg" class="img-fluid" alt="IBM concentration camp punchard"> <a href="https://github.com/fastai/fastbook/blob/master/03_ethics.ipynb">Source</a> - eye catching example - segway to now modern day software with algorithms</p>
-<section id="are-algorithms-more-object-than-people" class="level2">
-<h2 class="anchored" data-anchor-id="are-algorithms-more-object-than-people">Are algorithms more object than people?</h2>
+<p><img src="ibm-concentration-camp-punchcard.jpeg" class="img-fluid" alt="IBM concentration camp punchard"><br>
+<em>IBM concentration camp punchcard</em><br>
+<a href="https://github.com/fastai/fastbook/blob/master/03_ethics.ipynb">Source</a></p>
+<p>We are all aware of the horrors of the holocaust and can all agree this is an eggrigious example of focusing on techonology without care to its impact on society.<br>
+Nowadays we are fortunate enough to be in more peacefull times (for the most part), however the same ethical questions arise with development of new technology everyday that changes the way we interact with the world.<br>
+The impact of newer tech is often less obvious.<br>
+It is clear that directly cooperating with genocidal groups like the case of IBM or skirting public safety regulations like Theranos with their “one drop of blood” medical diagnotic machines are extermely unethical decisions.<br>
+Compare those examples to the common modern case of some reccomendation algorithm running on a computer in a server farm that chooses what content people see on a website or app.<br>
+At face value it seems much more benign right? Algorithms must be objective because they are based on data, and in the case of machine learning algorithms, lots and lots of data at that.</p>
+<p>It might seem that way at first until you discover that your video recommendation system is curating playlists of prepubescent partially clothed children to drive engagement of pedohiles on your platform.<br>
+<a href="https://www.nytimes.com/2019/06/03/world/americas/youtube-pedophiles.html">This was a very real problem caused by YouTube for the familes who had uploaded their innocent home videos of their kids simply enjoying a pool day</a>.<br>
+The objectives of the algorithm behind Youtube’s pedophilia curation was actually quite similar to the that of IBM and Theranos.<br>
+Similar to IBM’s CEO Tom Watson and Theranos CEO Elizabeth Holmes, the algorithm strived to optimize it’s performance metrics by any means necessary.</p>
+<p>When the algorithm received positive feedback by seeing the time spent by a user <em>exteremely</em> interested in videos of partially clothed children increase, it was reinforced to serve them more of that content.<br>
+When Tom Watson saw IBM profits soar when selling services to Nazi Germany, he was positively reinforced to develop more efficient systems to support genocide.<br>
+When Elizabeth Holmes saw herself becoming more and more famous by deveiving patients, employees, and investors, she was positively reinforced to keep the act going.</p>
+<p>Each of these agents was caught in a feedback loop that rewarded them for helping the depraved at the expense of the innocent.<br>
+Each agent lacked a moral compass to point them in a better direction for the good of society. Lastly, each agent did not act alone and had supporting actors that were privy to was really going on.<br>
+They too bear responsibility as they were complicit in the ethical violations of their company.</p>
+<p>A major difference to consider between these agents is that even though algorithms are biased like people, they are not <em>actually</em> people (yet).<br>
+However, they still inherit the biases of the people that created and trained them.</p>
+<section id="types-of-biases" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-biases">Types of biases</h2>
+<p>Let’s define a few different types of biases inherited from people to machine learning algorithms.<br>
+<a href="image of bias in ML"></a></p>
+<p><strong>Historical bias</strong>:<br>
+People, processes, and society are inherently biased stemming from the past which effects all datasets.</p>
+<p>Example <em>race bias</em> - Black people have historically, been victim to racism by white people and this is reflected in data used by algorithms. The COMPAS algorithm that determines sentencing and bail in the US showed obvious racial bias by disproportianetly labeling black Americans as higher risk to re-offend than white Americans by ~20% despite the results showing the predictions should be much more even.<br>
+<a href="img of table"></a></p>
+<p><strong>Measurement bias</strong>:<br>
+When we measure the wrong thing or measure it in the wrong way, models make mistakes.</p>
+<p>Example - Predictive models trained on electronic health rercords determined what factors like factors such as “colonoscopy” and “accidental injury” are highly correlated to being diagnosed with a stroke.<br>
+The real prediction here is that people who are more likely to go to doctors <em>at all</em> are more likely get diagnosed with a stroke because they show up more often in the first place.</p>
+<p><strong>Representation bias</strong>: This one was confusing to me as it seems offly similar to historical bias.<br>
+The idea is that models amplifies the existing bias in the dataset they are trained on.</p>
+<p>Example - In society there are some occupations that employ more women than men. For example, there are more women who are nurses and there are more men who are pastors. Occupation prediction models not only showed the existing gender discrepancy across occupations but also over amplifeid the numbers.<br>
+Women were more likely to be nurses while men more likely to be rappers both at a significantly higher margin than was actually true in the training data.<br>
+<a href="chart image of women icarrer"></a></p>
+<p>That example seems offly similar to amplyifying the racial bias exhibited by the COMPAS algorithm however I belive the difference lies in how closely the model predicts outcomes true to the training data.</p>
 </section>
-<section id="types-of-bias" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-bias">Types of bias</h2>
-<ul>
-<li>Name
-<ul>
-<li>Description</li>
-<li>Example</li>
-</ul></li>
-</ul>
-<p>Historical bias Measurement bias Aggregation bias Presentation bias Disinformation</p>
+<section id="responsibility-of-data-engineers" class="level2">
+<h2 class="anchored" data-anchor-id="responsibility-of-data-engineers">Responsibility of data engineers</h2>
+<p>There are no 100% correct answers when it comes to handling biases ethically.<br>
+However there is value in thinking through which approaches are better and which are worse.<br>
+Although algorithms are not people, hopefully you are convinced that they do inherit the biases of people.<br>
+In comparison to traditional hardware tech, algorithms are: - cheap to develop - more likely to be implemented without an appeals process - capable of scaling quickly</p>
+<p>Her eCounter measures: - Make algorithms more transparent and able to be visualized by non-technical people - Use more gradual deployment processes</p>
+<p>This consideration of ethics maybe isn’t for everyone. Growth mindset that the you of today should strive be better than the you of yesterday.<br>
+It is our responsibility to ensure algorithms make the Links for the curious</p>
 </section>
-<section id="latanya-sweeney" class="level2">
-<h2 class="anchored" data-anchor-id="latanya-sweeney">Latanya Sweeney</h2>
+<section id="extra-links" class="level2">
+<h2 class="anchored" data-anchor-id="extra-links">Extra links</h2>
+<ul>
+<li>Latanya Sweeney
 <ul>
 <li>google</li>
 <li>racism</li>
-</ul>
-</section>
-<section id="healthcare-link" class="level2">
-<h2 class="anchored" data-anchor-id="healthcare-link">## Healthcare link</h2>
-</section>
-<section id="responsibility" class="level2">
-<h2 class="anchored" data-anchor-id="responsibility">Responsibility</h2>
-<ul>
-<li>there is no correct answer when it comes to ethics.
-<ul>
-<li>However there is value in thinking through which approaches are better and which are worse.</li>
 </ul></li>
-<li>counter measures</li>
-<li>why it is our responsibility
-<ul>
-<li>same idea as why it is our responsibility to take care of environment</li>
-</ul></li>
+<li>healthcare verge</li>
 </ul>
 
 
