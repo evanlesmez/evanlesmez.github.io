@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</loc>
-    <lastmod>2023-10-17T15:56:49.468Z</lastmod>
+    <lastmod>2023-10-17T22:18:01.931Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/index.html</loc>
-    <lastmod>2023-10-17T18:40:45.437Z</lastmod>
+    <lastmod>2023-10-17T22:18:41.727Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/about.html</loc>
-    <lastmod>2023-10-17T15:46:26.509Z</lastmod>
+    <lastmod>2023-10-17T22:18:00.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/01-ethics-of-tech/index.html</loc>
+    <lastmod>2023-10-17T22:18:41.419Z</lastmod>
   </url>
 </urlset>
