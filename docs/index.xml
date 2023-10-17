@@ -10,26 +10,7 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Ev&#39;s blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 08 Sep 2023 04:00:00 GMT</lastBuildDate>
-<item>
-  <title>Responsbility of tech creators</title>
-  <dc:creator>Evan Lesmez</dc:creator>
-  <link>https://evanlesmez.com/posts/01-ethics-of-tech/ethics-of-tech.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-
-
- ]]></description>
-  <category>ethics</category>
-  <category>ai</category>
-  <category>tech</category>
-  <guid>https://evanlesmez.com/posts/01-ethics-of-tech/ethics-of-tech.html</guid>
-  <pubDate>Fri, 08 Sep 2023 04:00:00 GMT</pubDate>
-</item>
+<lastBuildDate>Fri, 12 May 2023 04:00:00 GMT</lastBuildDate>
 <item>
   <title>First Steps: AI for Animal Advocacy with Fastai 🐇</title>
   <dc:creator>Evan Lesmez</dc:creator>

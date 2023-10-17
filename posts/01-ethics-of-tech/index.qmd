@@ -1,16 +1,53 @@
 ---
-title: "AI inherits the prejudices of it's creators and society."
+title: "Algorithms inherit the prejudices of their creators and society."
 description: "Post description"
 author: "Evan Lesmez"
 date: "09/08/2023"
+draft: true
 categories:
   - ethics
   - ai
   - tech
 ---
 
-##
 
-## IBM and Hitler
+In 1939, IBM's president Thomas Watson approved the release of the company's specialized alphabetizing machines to help organize the deportation of Polish Jews for Nazi Germany.  
+The IBM executives strategically marketed directly to Hitler and his leadership team to setup the deal.  
+A few years earlier, IBM CEO Tom Watson Sr. was awarded a "Service to the Reich" medal. IBM setup a punchard system that tracked the way each person was killed and which ethnic group they belonged to.  
+These machines required training and maintenance so IBM employees would regularly show up onsite at concentration camps to operate and repair them. 
+IBM was thriving financially and technologically, but at what cost to humanity?  
+
+![IBM CEO Tom Watson Sr. with Adolf](ibm-ceo-tom-watson-sr-with-adolf.png)
+IBM leadership with Adolf.
+![IBM concentration camp punchard](ibm-concentration-camp-punchcard.jpeg)
+[Source](https://github.com/fastai/fastbook/blob/master/03_ethics.ipynb)
+- eye catching example
+- segway to now modern day software with algorithms
+
+## Are algorithms more object than people?
+
+## Types of bias
+- Name
+    - Description
+    - Example
+
+Historical bias
+Measurement bias
+Aggregation bias
+Presentation bias
+Disinformation
 
 ## Latanya Sweeney
+- google
+- racism
+
+
+## Healthcare link
+- 
+
+## Responsibility
+- there is no correct answer when it comes to ethics.
+    - However there is value in thinking through which approaches are better and which are worse.
+- counter measures
+- why it is our responsibility
+    - same idea as why it is our responsibility to take care of environment
