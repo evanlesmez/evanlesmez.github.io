@@ -14,21 +14,22 @@
 <item>
   <title>Algorithms inherit the prejudices of their creators and society.</title>
   <dc:creator>Evan Lesmez</dc:creator>
-  <link>https://evanlesmez.com/posts/01-ethics-of-tech/index.html</link>
+  <link>https://evanlesmez.com/posts/01-algorithms-inherit-bias/index.html</link>
   <description><![CDATA[ 
 
 
 
 
-<p><img src="https://evanlesmez.com/posts/01-ethics-of-tech/ibm-ceo-tom-watson-sr-with-adolf.png" class="img-fluid" alt="IBM CEO Tom Watson Sr.&nbsp;with Adolf"><br>
+<p><img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/ibm-ceo-tom-watson-sr-with-adolf.png" class="img-fluid" alt="IBM CEO Tom Watson Sr.&nbsp;with Adolf"><br>
 <em>IBM leadership with Adolf Hitler</em></p>
 <p>In 1939, under the direction of its president, Thomas Watson, IBM released specialized alphabetizing machines.<br>
 These machines along with other IBM products played a pivotal role in organizing the deportation of Polish Jews for Nazi Germany.<br>
 The IBM leadership didn’t just passively supply; they actively marketed their technology directly to Hitler and his top officials.<br>
 Just a few years prior, IBM’s CEO, Tom Watson Sr., had even been honored with a “Service to the Reich” medal.<br>
-The company implemented a punch card system to track the method of execution and the ethnicity of each victim. And to ensure these machines ran efficiently, IBM staff were often present on-site at concentration camps for operation and maintenance.<br>
+The company implemented a punch card system to track the method of execution and the ethnicity of each victim.<br>
+And to ensure these machines ran efficiently, IBM staff were often present on-site at concentration camps for operation and maintenance.<br>
 IBM thrived financially and technologically, but at what cost to humanity?</p>
-<p><img src="https://evanlesmez.com/posts/01-ethics-of-tech/ibm-concentration-camp-punchcard.jpeg" class="img-fluid" alt="IBM concentration camp punch-card"><br>
+<p><img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/ibm-concentration-camp-punchcard.jpeg" class="img-fluid" alt="IBM concentration camp punch-card"><br>
 <em>IBM concentration camp punch-card</em> - <a href="https://github.com/fastai/fastbook/blob/master/03_ethics.ipynb">Source</a></p>
 <p>We are all aware of the horrors of the holocaust and can agree IBM’s involvement is an egregious example of focusing on technology without care to its impact on society.<br>
 Nowadays we are fortunate enough to be in, for the most part, more peaceful times.<br>
@@ -54,13 +55,13 @@ However, they still inherit the biases of the people that created and trained th
 <section id="types-of-biases" class="level2">
 <h2 class="anchored" data-anchor-id="types-of-biases">Types of biases</h2>
 <p>Let’s define a few different types of biases inherited from people to machine learning algorithms.<br>
-<img src="https://evanlesmez.com/posts/01-ethics-of-tech/pipeline_diagram.svg" class="img-fluid" alt="ML bias pipeline"></p>
+<img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/pipeline_diagram.svg" class="img-fluid" alt="ML bias pipeline"></p>
 <p><strong>Historical bias</strong><br>
 People, processes, and society are inherently biased stemming from the past which effects all datasets.</p>
 <p>Example <em>race bias</em>:<br>
 Black people have historically been victim to racism by white people and this is reflected in data used by algorithms.<br>
 The COMPAS algorithm that determines sentencing and bail in the US showed obvious racial bias by disproportionately labeling black Americans as higher risk to re-offend than white Americans by ~20% despite the results showing the predictions should be much closer.<br>
-<img src="https://evanlesmez.com/posts/01-ethics-of-tech/pred-fials-for-black-defandants.png" class="img-fluid" alt="2x2 table of black vs white defendant outcomes"></p>
+<img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/pred-fials-for-black-defandants.png" class="img-fluid" alt="2x2 table of black vs white defendant outcomes"></p>
 <p><strong>Measurement bias</strong><br>
 When we measure the wrong thing or measure it in the wrong way, models make mistakes.</p>
 <p>Example:<br>
@@ -74,7 +75,7 @@ In society there are some occupations that employ more women than men.<br>
 For example, there are more women who are nurses and there are more men who are pastors.<br>
 Occupation prediction models not only demonstrated the existing gender discrepancy across occupations but also over amplified the numbers.<br>
 Women were more likely to be nurses while men more likely to be rappers both at a significantly higher margin than was actually true in the training data.<br>
-<img src="https://evanlesmez.com/posts/01-ethics-of-tech/gender-occupation-gap.png" class="img-fluid" alt="Gender occupation prediction gap"></p>
+<img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/gender-occupation-gap.png" class="img-fluid" alt="Gender occupation prediction gap"></p>
 <p>That example seems similar to the COMPAS algorithm as both seem to stem from historical bias.<br>
 One exhibits gender bias and the other racial.<br>
 Maybe the difference lies in how large the amplification of bias between predictions and the training data is.</p>
@@ -115,7 +116,7 @@ If you are curious about reading on about other cases of algorithms gone wrong t
   <category>ethics</category>
   <category>ai</category>
   <category>tech</category>
-  <guid>https://evanlesmez.com/posts/01-ethics-of-tech/index.html</guid>
+  <guid>https://evanlesmez.com/posts/01-algorithms-inherit-bias/index.html</guid>
   <pubDate>Tue, 17 Oct 2023 04:00:00 GMT</pubDate>
 </item>
 <item>

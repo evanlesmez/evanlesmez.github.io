@@ -16,7 +16,7 @@ In 1939, under the direction of its president, Thomas Watson, IBM released speci
 These machines along with other IBM products played a pivotal role in organizing the deportation of Polish Jews for Nazi Germany.  
 The IBM leadership didn't just passively supply; they actively marketed their technology directly to Hitler and his top officials.  
 Just a few years prior, IBM's CEO, Tom Watson Sr., had even been honored with a "Service to the Reich" medal.  
-The company implemented a punch card system to track the method of execution and the ethnicity of each victim. 
+The company implemented a punch card system to track the method of execution and the ethnicity of each victim.  
 And to ensure these machines ran efficiently, IBM staff were often present on-site at concentration camps for operation and maintenance.  
 IBM thrived financially and technologically, but at what cost to humanity?  
 
