@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Ev's blog 🐒🐧🐍"
+  title: "Evan Lesmez"
   site-url: https://evanlesmez.com
   navbar:
     right:
@@ -11,16 +11,16 @@ website:
         file: about.qmd
       - icon: github
         href: https://github.com/evanlesmez
-      # - icon: twitter
-        # href: https://twitter.com
+      - icon: twitter
+        href: https://twitter.com/EvanLesmez
       - icon: rss
         href: index.xml
-  description: "Ev's blog"
+  description: "Evan Lesmez's blog"
 format:
   html:
     theme: 
-      light: default 
-      dark: solar 
+      light: yeti
+      dark: cyborg
     css: styles.css
 mainfont: HackNerdFont
 monofont: HackNerdFontMono

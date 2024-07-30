@@ -13,6 +13,8 @@ about:
     - icon: github
       text: Github
       href: https://github.com/evanlesmez/
-
+ 
 ---
-This a blog about about Ev's deep learning journey and random ideas 🐒
+This a blog about about my learning journey delving into topics like deep learning/AI, game development, other programming domains, and random ideas. 
+I am a software engineer.
+My main passions are veganism and animal activism, games, and tech.

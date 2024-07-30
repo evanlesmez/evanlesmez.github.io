@@ -1,5 +1,5 @@
 ---
-title: "Posts by Lesmez 🙃"
+title: "Posts 🐒🐧🐍"
 listing:
   contents: posts
   sort: "date desc"
