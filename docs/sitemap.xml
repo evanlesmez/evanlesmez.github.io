@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://evanlesmez.com/index.html</loc>
-    <lastmod>2024-07-30T20:12:32.453Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</loc>
-    <lastmod>2024-07-30T20:12:31.993Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/about.html</loc>
-    <lastmod>2024-07-30T20:12:31.483Z</lastmod>
+    <lastmod>2024-07-30T20:56:02.062Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/posts/01-algorithms-inherit-bias/index.html</loc>
-    <lastmod>2024-07-30T20:12:32.233Z</lastmod>
+    <lastmod>2024-07-30T20:56:01.642Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/about.html</loc>
+    <lastmod>2024-07-30T20:56:00.902Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</loc>
+    <lastmod>2024-07-30T20:56:01.402Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/02-devlog-day1/index.html</loc>
+    <lastmod>2024-07-30T20:56:01.822Z</lastmod>
   </url>
 </urlset>

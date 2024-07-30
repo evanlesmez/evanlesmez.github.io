@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Evan Lesmez">
+<meta name="dcterms.date" content="2024-07-30">
+<meta name="description" content="Getting started with 2D Game Development in Godot">
 
-<title>Evan Lesmez - Posts 🐒🐧🐍</title>
+<title>Evan Lesmez - Devlog Day 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./DALL·E-solarpunk-nature-robot-leaf.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../DALL·E-solarpunk-nature-robot-leaf.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -64,50 +65,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Evan Lesmez" href="index.xml"></head>
-
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Evan Lesmez</span>
     </a>
   </div>
@@ -118,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -132,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -147,166 +117,85 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Posts 🐒🐧🐍</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Devlog Day 1</h1>
+                  <div>
+        <div class="description">
+          Getting started with 2D Game Development in Godot
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">gamedev</div>
+                <div class="quarto-category">video games</div>
+                <div class="quarto-category">tech</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Evan Lesmez </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 30, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ai">ai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="deeplearning">deeplearning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ethics">ethics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="fastai">fastai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gamedev">gamedev <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tech">tech <span class="quarto-category-count">(2)</span></div><div class="category" data-category="video games">video games <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<strong>Disclaimer:</strong> Today was not actually my first day of game development nor Godot.<br>
+I actually went to nerdy chess and “code” camp back in elementary school and built a simple 2d shooter game.<br>
+A several years ago I tinkered with Unity for about a month but lost interest as work at the startup I was with picked up a lot.<br>
+Two years ago I discovered Godot and went through the getting started docs.<br>
+I built a <a href="https://streamable.com/6baba6">simple 2D dodge the creeps game</a>.<br>
+
+<div style="text-align: center;padding:10px 0;">
+<img src="./dodge_the_creeps_screenshot.png" style="height:400px; margin: 0 auto">
+</div>
+<p>Yesterday I rebuilt it following along with a <a href="https://www.gdquest.com/tutorial/godot/learning-paths/getting-started-in-2021/chapter/10.your-first-2d-game/">GDQuest tutorial</a> and that brings us to today.<br>
+I am starting the <a href="https://school.gdquest.com/products/learn_2d_gamedev_godot_4">Learn 2D Gamedev Godot 4</a> course.</p>
+<p>Why am I getting back into gamedev and why am I writing this down?<br>
+As to why gamedev:<br>
+I have always loved games since I was a kid like Super Smash Bros Melee, Sly Cooper, FIFA, Uncharted 2, CoD Modern Warfare 2, and League of Legends.<br>
+I always thought it would be fun to try making one of the several game ideas I have jotted down in my notebooks over the years.<br>
+I now know how to code decently well.<br>
+I think games are a valuable way to spread ideas, especially on issues I care about like veganism, animal activism, and conservation.</p>
+<p>Why am I writing this down?<br>
+Mostly to keep myself accountable.<br>
+As echoed in both the fastai and GDQuest curriculum, social pressure is inevitablely motivating for every single person wether we admit it or not.<br>
+As I don’t have a group of study partners nearby to work on either of those, I am resorting to posting a daily blog that I will share on social media.<br>
+I’ll try to keep these short and to the point in 250ish words.</p>
+<p>What I learned so far on gamdev and Godot:<br>
+* pixel art isn’t as easy as it looks<br>
+* vector art is great to start with for beginners making their earliest games<br>
+* signals are a convenient design pattern to broadcast events from different game objects to each other to determine what should happen next<br>
+* rendering animations for some basic sprites is way simpler than I thought it would be (at least in Godot)<br>
+* music and sounds add a lot to how a game feels</p>
+<p>For tomorrow I want to continue with the course and hopefully have finished answering the fastai end of chapter questions I have put off for a while.</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="gamedev,video games,tech" data-listing-date-sort="1722312000000" data-listing-file-modified-sort="1722372700722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<div class="thumbnail">
-<p><a href="./posts/02-devlog-day1/index.html"> <p class="card-img-top"><img src="posts/02-devlog-day1/dodge_the_creeps_screenshot.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/02-devlog-day1/index.html">
-<h3 class="no-anchor listing-title">
-Devlog Day 1
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('gamedev'); return false;">
-gamedev
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('video games'); return false;">
-video games
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tech'); return false;">
-tech
-</div>
-</div>
-<a href="./posts/02-devlog-day1/index.html">
-<div class="listing-description">
-<p>Getting started with 2D Game Development in Godot</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/02-devlog-day1/index.html">
-<div class="listing-date">
-Jul 30, 2024
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ethics,ai,tech" data-listing-date-sort="1697515200000" data-listing-file-modified-sort="1722370038673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
-<div class="thumbnail">
-<p><a href="./posts/01-algorithms-inherit-bias/index.html"> <p class="card-img-top"><img src="posts/01-algorithms-inherit-bias/ibm-ceo-tom-watson-sr-with-adolf.png" alt="IBM CEO Tom Watson Sr. with Adolf"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/01-algorithms-inherit-bias/index.html">
-<h3 class="no-anchor listing-title">
-Algorithms inherit the prejudices of their creators and society.
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ethics'); return false;">
-ethics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ai'); return false;">
-ai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tech'); return false;">
-tech
-</div>
-</div>
-<a href="./posts/01-algorithms-inherit-bias/index.html">
-<div class="listing-description">
-<p>My notes and thoughts on Deep Learning for Coders: Chapter 3 data ethics</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/01-algorithms-inherit-bias/index.html">
-<div class="listing-date">
-Oct 17, 2023
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="blog,fastai,deeplearning" data-listing-date-sort="1683864000000" data-listing-file-modified-sort="1694130706627" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
-<div class="thumbnail">
-<p><a href="./posts/00-first-steps-fastai/index.html"> <img src="./posts/00-first-steps-fastai/DALL·E-digital_art_cute_solarpunk_forest_guardian_robot.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/00-first-steps-fastai/index.html">
-<h3 class="no-anchor listing-title">
-First Steps: AI for Animal Advocacy with Fastai 🐇
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
-blog
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fastai'); return false;">
-fastai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('deeplearning'); return false;">
-deeplearning
-</div>
-</div>
-<a href="./posts/00-first-steps-fastai/index.html">
-<div class="listing-description">
-This charming little forest robot was created using OpenAI’s DALL·E 2 model, based on my prompt: “Digital art cute solarpunk forest guardian robot”.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/00-first-steps-fastai/index.html">
-<div class="listing-date">
-May 12, 2023
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

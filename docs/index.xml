@@ -10,7 +10,55 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 17 Oct 2023 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 30 Jul 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 1</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/02-devlog-day1/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<strong>Disclaimer:</strong> Today was not actually my first day of game development nor Godot.<br>
+I actually went to nerdy chess and “code” camp back in elementary school and built a simple 2d shooter game.<br>
+A several years ago I tinkered with Unity for about a month but lost interest as work at the startup I was with picked up a lot.<br>
+Two years ago I discovered Godot and went through the getting started docs.<br>
+I built a <a href="https://streamable.com/6baba6">simple 2D dodge the creeps game</a>.<br>
+
+<div style="text-align: center;padding:10px 0;">
+<img src="https://evanlesmez.com/posts/02-devlog-day1/dodge_the_creeps_screenshot.png" style="height:400px; margin: 0 auto">
+</div>
+<p>Yesterday I rebuilt it following along with a <a href="https://www.gdquest.com/tutorial/godot/learning-paths/getting-started-in-2021/chapter/10.your-first-2d-game/">GDQuest tutorial</a> and that brings us to today.<br>
+I am starting the <a href="https://school.gdquest.com/products/learn_2d_gamedev_godot_4">Learn 2D Gamedev Godot 4</a> course.</p>
+<p>Why am I getting back into gamedev and why am I writing this down?<br>
+As to why gamedev:<br>
+I have always loved games since I was a kid like Super Smash Bros Melee, Sly Cooper, FIFA, Uncharted 2, CoD Modern Warfare 2, and League of Legends.<br>
+I always thought it would be fun to try making one of the several game ideas I have jotted down in my notebooks over the years.<br>
+I now know how to code decently well.<br>
+I think games are a valuable way to spread ideas, especially on issues I care about like veganism, animal activism, and conservation.</p>
+<p>Why am I writing this down?<br>
+Mostly to keep myself accountable.<br>
+As echoed in both the fastai and GDQuest curriculum, social pressure is inevitablely motivating for every single person wether we admit it or not.<br>
+As I don’t have a group of study partners nearby to work on either of those, I am resorting to posting a daily blog that I will share on social media.<br>
+I’ll try to keep these short and to the point in 250ish words.</p>
+<p>What I learned so far on gamdev and Godot:<br>
+* pixel art isn’t as easy as it looks<br>
+* vector art is great to start with for beginners making their earliest games<br>
+* signals are a convenient design pattern to broadcast events from different game objects to each other to determine what should happen next<br>
+* rendering animations for some basic sprites is way simpler than I thought it would be (at least in Godot)<br>
+* music and sounds add a lot to how a game feels</p>
+<p>For tomorrow I want to continue with the course and hopefully have finished answering the fastai end of chapter questions I have put off for a while.</p>
+
+
+
+ ]]></description>
+  <category>gamedev</category>
+  <category>video games</category>
+  <category>tech</category>
+  <guid>https://evanlesmez.com/posts/02-devlog-day1/index.html</guid>
+  <pubDate>Tue, 30 Jul 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Algorithms inherit the prejudices of their creators and society.</title>
   <dc:creator>Evan Lesmez</dc:creator>
