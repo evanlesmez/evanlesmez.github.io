@@ -5,6 +5,7 @@ project:
 website:
   title: "Evan Lesmez"
   site-url: https://evanlesmez.com
+  favicon: DALL·E-solarpunk-nature-robot-leaf.png
   navbar:
     right:
       - text: "About"
