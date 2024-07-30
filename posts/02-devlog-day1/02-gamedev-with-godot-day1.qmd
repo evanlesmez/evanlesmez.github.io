@@ -1,0 +1,44 @@
+---
+title: "Devlog Day 1"
+description: "Getting started with 2D Game Development in Godot"
+author: "Evan Lesmez"
+date: "2024-07-30"
+categories:
+  - gamedev
+  - video games
+  - tech
+---
+
+**Disclaimer:**  Today was not actually my first day of game development nor Godot.  
+I actually went to nerdy chess and "code" camp back in elementary school and built a simple 2d shooter game.  
+A several years ago I tinkered with Unity for about a month but lost interest as work at the startup I was with picked up a lot.  
+Two years ago I discovered Godot and went through the getting started docs.  
+I built a [simple 2D dodge the creeps game](https://streamable.com/6baba6).  
+<div style="text-align: center;padding:10px 0;"><img src="./dodge_the_creeps_screenshot.png" style="height:400px; margin: 0 auto"></div>
+
+
+Yesterday I rebuilt it following along with a [GDQuest tutorial](https://www.gdquest.com/tutorial/godot/learning-paths/getting-started-in-2021/chapter/10.your-first-2d-game/) and that brings us to today.  
+I am starting the [Learn 2D Gamedev Godot 4](https://school.gdquest.com/products/learn_2d_gamedev_godot_4) course.  
+
+Why am I getting back into gamedev and why am I writing this down?  
+As to why gamedev:  
+I have always loved games since I was a kid like Super Smash Bros Melee, Sly Cooper, FIFA, Uncharted 2, CoD Modern Warfare 2,  and League of Legends.  
+I always thought it would be fun to try making one of the several game ideas I have jotted down in my notebooks over the years.  
+I now know how to code decently well.  
+I think games are a valuable way to spread ideas, especially on issues I care about like veganism, animal activism, and conservation.  
+
+Why am I writing this down?  
+Mostly to keep myself accountable.  
+As echoed in both the fastai and GDQuest curriculum, social pressure is inevitablely motivating for every single person wether we admit it or not.  
+As I don't have a group of study partners nearby to work on either of those, I am resorting to posting a daily blog that I will share on social media.  
+I'll try to keep these short and to the point in 250ish words.  
+
+What I learned so far on gamdev and Godot:  
+* pixel art isn't as easy as it looks  
+* vector art is great to start with for beginners making their earliest games  
+* signals are a convenient design pattern to broadcast events from different game objects to each other to determine what should happen next  
+* rendering animations for some basic sprites is way simpler than I thought it would be (at least in Godot)  
+* music and sounds add a lot to how a game feels  
+
+
+For tomorrow I want to continue with the course and hopefully have finished answering the fastai end of chapter questions I have put off for a while.  
