@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</loc>
+    <lastmod>2023-10-17T22:30:51.205Z</lastmod>
+  </url>
+  <url>
     <loc>https://evanlesmez.com/index.html</loc>
-    <lastmod>2023-09-08T04:54:48.824Z</lastmod>
+    <lastmod>2023-10-17T22:30:50.197Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/about.html</loc>
-    <lastmod>2023-09-07T23:27:47.818Z</lastmod>
+    <lastmod>2023-10-17T22:30:49.793Z</lastmod>
   </url>
   <url>
-    <loc>https://evanlesmez.com/posts/2023-05-12-first-steps-fastai/index.html</loc>
-    <lastmod>2023-09-07T23:28:45.658Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</loc>
-    <lastmod>2023-09-07T23:51:47.137Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/posts/01-ethics-of-tech/ethics-of-tech.html</loc>
-    <lastmod>2023-09-08T04:54:48.604Z</lastmod>
+    <loc>https://evanlesmez.com/posts/01-algorithms-inherit-bias/index.html</loc>
+    <lastmod>2023-10-17T22:30:50.529Z</lastmod>
   </url>
 </urlset>
