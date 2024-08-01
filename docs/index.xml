@@ -10,7 +10,41 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 30 Jul 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 31 Jul 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 2</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/03-devlog-day2/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://evanlesmez.com/posts/03-devlog-day2/editor-screenshot.png" style="height: 600px"></p>
+<p>Today I completed the tour of Godot game made by the GDQuest creators.<br>
+Learned about TileMap nodes to create repeating visual 2D blocks used in old games like Zelda.<br>
+Used “Terrains” to create instances of the TileMaps faster.<br>
+Collision shapes like invisible walls can be represented by shapes in the scene editor to convey that a space is off limits.<br>
+Repeated using a signal to hook up a player node to a UI health bar when an enemy did damage.</p>
+<p>Note:<br>
+Backgrounds add a lot to the feel of a game as does looting a chest.</p>
+<p>I asked a question in the last lesson about any gamedev podcast recommendations.<br>
+Not exactly gamedev, but the creator of the course recommended theprimegean so I watched a few videos today about Vim and made me want to get back on switching to neovim as my editor.<br>
+Currently I use vim mode wherever possible such as VSCode, Jupyter Lab, Obsidian …<br>
+I did setup neovim with some Lua plugins but was still too slow compared to working in VS Code for basic things like creating a new file, copying files, searching through all the files for a class…<br>
+But might be time to start trying again.<br>
+Found some Godot 4 Vim binding plugins for GDScript which will be helpful.</p>
+<p>Tomorrow I will be moving onto the <a href="https://school.gdquest.com/courses/learn_2d_gamedev_godot_4/learn_gdscript/learn_gdscript_app">next lesson on GDScript</a>.</p>
+
+
+
+ ]]></description>
+  <category>gamedev</category>
+  <category>video games</category>
+  <category>tech</category>
+  <guid>https://evanlesmez.com/posts/03-devlog-day2/index.html</guid>
+  <pubDate>Wed, 31 Jul 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 1</title>
   <dc:creator>Evan Lesmez</dc:creator>

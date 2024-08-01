@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/03-devlog-day2/index.html",
       "/posts/02-devlog-day1/index.html",
       "/posts/01-algorithms-inherit-bias/index.html",
       "/posts/00-first-steps-fastai/index.html"

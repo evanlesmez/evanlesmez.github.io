@@ -1,0 +1,30 @@
+---
+title: "Devlog Day 2"
+description: "Tour of Godot"
+author: "Evan Lesmez"
+date: "2024-07-31"
+categories:
+  - gamedev
+  - video games
+  - tech
+---
+<img src="./editor-screenshot.png" style="height: 600px">
+
+Today I completed the tour of Godot game made by the GDQuest creators.  
+Learned about TileMap nodes to create repeating visual 2D blocks used in old games like Zelda.  
+Used "Terrains" to create instances of the TileMaps faster.  
+Collision shapes like invisible walls can be represented by shapes in the scene editor to convey that a space is off limits.  
+Repeated using a signal to hook up a player node to a UI health bar when an enemy did damage.  
+
+
+Note:  
+Backgrounds add a lot to the feel of a game as does looting a chest.  
+
+I asked a question in the last lesson about any gamedev podcast recommendations.  
+Not exactly gamedev, but the creator of the course recommended theprimegean so I watched a few videos today about Vim and made me want to get back on switching to neovim as my editor.  
+Currently I use vim mode wherever possible such as VSCode, Jupyter Lab, Obsidian ...  
+I did setup neovim with some Lua plugins but was still too slow compared to working in VS Code for basic things like creating a new file, copying files, searching through all the files for a class...  
+But might be time to start trying again.  
+Found some Godot 4 Vim binding plugins for GDScript which will be helpful.  
+
+Tomorrow I will be moving onto the [next lesson on GDScript](https://school.gdquest.com/courses/learn_2d_gamedev_godot_4/learn_gdscript/learn_gdscript_app).   
