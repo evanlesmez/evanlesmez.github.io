@@ -1,0 +1,29 @@
+---
+title: "Devlog Day 3"
+description: "GDScript"
+author: "Evan Lesmez"
+date: "2024-07-31"
+categories:
+  - gamedev
+  - video games
+  - tech
+---
+Today I learned about GDScript, Godot's scripting language.  
+It looks like a blend of Python and Javascript.  
+Python because of the indentation and Javascript because of the var keyword used for creating variables.  
+I did not have as much time today so I did about 3 of the starter lessons.  Most of it was a little too simple but did at least learn some syntax and a few builtin functions.  
+
+```py
+# shows a game entity like a character
+show()
+
+# hides the entity
+hide()
+
+# what you would expect
+rotate(radians:float)
+```
+
+Used those to make this turtle draw some rectangles.  
+
+<img src="./turtle-game.png" style="width: 700px">
