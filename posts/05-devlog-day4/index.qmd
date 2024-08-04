@@ -1,0 +1,24 @@
+---
+title: "Devlog Day 4"
+description: "GDScript"
+author: "Evan Lesmez"
+date: "2024-08-03"
+categories:
+  - gamedev
+  - video games
+  - tech
+---
+
+Today I completed the intro to GDSript games and learned a few interesting things:  
+
+The `_process` builtin function is the "game loop" of Godot to place code that needs to trigger every frame.  
+It has a parameter called 'delta'.  
+Delta is a time difference since the previous frame.  
+Referencing delta in calculations helps the game feel more smooth across various frame rates.  
+`lerp` is a function that returns a weighted average between two values (linear interpolation).  
+You can auto type hint with the `:=` operator like `var name := "gibby"`.  
+Most importantly, GDScript is basically Python.  
+
+Up next is working on a top-down action game in space.  
+
+<img src="./gdquest_boy.png" width="800px"/>

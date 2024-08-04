@@ -10,7 +10,36 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Wed, 31 Jul 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 03 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 4</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/05-devlog-day4/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Today I completed the intro to GDSript games and learned a few interesting things:</p>
+<p>The <code>_process</code> builtin function is the “game loop” of Godot to place code that needs to trigger every frame.<br>
+It has a parameter called ‘delta’.<br>
+Delta is a time difference since the previous frame.<br>
+Referencing delta in calculations helps the game feel more smooth across various frame rates.<br>
+<code>lerp</code> is a function that returns a weighted average between two values (linear interpolation).<br>
+You can auto type hint with the <code>:=</code> operator like <code>var name := "gibby"</code>.<br>
+Most importantly, GDScript is basically Python.</p>
+<p>Up next is working on a top-down action game in space.</p>
+<p><img src="https://evanlesmez.com/posts/05-devlog-day4/gdquest_boy.png" width="800px"></p>
+
+
+
+ ]]></description>
+  <category>gamedev</category>
+  <category>video games</category>
+  <category>tech</category>
+  <guid>https://evanlesmez.com/posts/05-devlog-day4/index.html</guid>
+  <pubDate>Sat, 03 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 3</title>
   <dc:creator>Evan Lesmez</dc:creator>
