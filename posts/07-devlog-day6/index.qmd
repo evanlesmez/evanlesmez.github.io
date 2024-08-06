@@ -1,0 +1,24 @@
+---
+title: "Devlog Day 6"
+description: "Vim practice and player movement with normalized vectors in Godot"
+author: "Evan Lesmez"
+date: "2024-08-05"
+categories:
+  - vim
+  - gamedev
+---
+I practiced some Vim today in the same Practical Vim book.  
+Learned that Vim writes history to `vim info` file that persists across machine boots.  
+The history is not only execute commands but also search patterns and I am sure other commands.  
+In execute command mode `Ctrl-d`.  
+`*` in normal mode searches for the hovered word.  
+`<C-r><C-w>` in execute mode copies the current word in as pattern for things like substitutions.  
+
+In Godot, I practiced making a space ship move with player inputs.  
+The most important parts were adding the controls in the Project settings.  
+The `direction` is stored as a `2DVector`.  
+The `Input` object has an `axis` method that accepts two input arguments like "move_down" or "move_up" to map values between -1 and 1 to.  
+`direction` is updated to match these values and then scaled by whatever speed is desired.  
+Lastly, the `direction` vector must be `normalized` if the `length` is above 1.0 which happens when moving diagonally which would make the ship move 1.4 times faster #pythagoreantheorum.  
+
+<img src="./ship.png" style="height:300px;"/>

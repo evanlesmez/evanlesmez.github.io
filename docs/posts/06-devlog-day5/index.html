@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Evan Lesmez">
+<meta name="dcterms.date" content="2024-08-04">
+<meta name="description" content="Vim and moving sprites in Godot">
 
-<title>Evan Lesmez - Posts 🐒🐧🐍</title>
+<title>Evan Lesmez - Devlog Day 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./DALL·E-solarpunk-nature-robot-leaf.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../DALL·E-solarpunk-nature-robot-leaf.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -64,50 +65,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Evan Lesmez" href="index.xml"></head>
-
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Evan Lesmez</span>
     </a>
   </div>
@@ -118,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -132,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -147,368 +117,75 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Posts 🐒🐧🐍</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Devlog Day 5</h1>
+                  <div>
+        <div class="description">
+          Vim and moving sprites in Godot
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">vim</div>
+                <div class="quarto-category">gamedev</div>
+                <div class="quarto-category">theprimagean</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Evan Lesmez </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 4, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="ai">ai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="deeplearning">deeplearning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ethics">ethics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="fastai">fastai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gamedev">gamedev <span class="quarto-category-count">(6)</span></div><div class="category" data-category="tech">tech <span class="quarto-category-count">(5)</span></div><div class="category" data-category="theprimagean">theprimagean <span class="quarto-category-count">(1)</span></div><div class="category" data-category="video games">video games <span class="quarto-category-count">(4)</span></div><div class="category" data-category="vim">vim <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<p>After watching some ThePrimegean vids, I was inspired to get back into using NeoVim as my primary text editor.<br>
+I had the “Practical Vim” book lying around so I picked it back up again and started practicing.</p>
+<p>Some Vim notes I took today:<br>
+Ex Commands are intended for longer range where as normal commands are more local to a region of the document being edited.<br>
+Capital V is a full linve visual select rather than lower v.<br>
+<code>:t</code> or <code>:co</code> is shortand for copy.<br>
+<code>:m</code> is shorthand for move <code>:$</code> is end of file.<br>
+<code>:1</code> is first line<br>
+<code>:'&lt;,'&gt;</code> is current visual selection.<br>
+<code>:{range} normal .</code> runs the prev normal mode command on the range. this builds off that . is the key to repeat the last normal mode command. <code>:%:</code> repeats the last EX command</p>
+<p>Back to GDQuest Godot:<br>
+<a href="https://github.com/joshnajera/godot-vim">From the godot-vim repo</a> I downloaded the zip and enabled the plugin for Vim bindings in Godot editor.<br>
+Some of the bindings are missing like execute mode and <code>Ctrl+[</code> to exit insert mode unfortunately.<br>
+In Godot, position of objects is manipulated by the <code>position</code> attribute of the node.<br>
+You can add or subtract 2D vectors to change the position relative to the prev position in the <code>_process</code> method of the node.<br>
+Vector2D comes with an <code>angle</code> method that gives the angle of the vector probably in relation to to the positive direction of the x axis.<br>
+Using this angle, you can manipulate the <code>rotation</code> attribute of a node to keep the direction of the object facing the direction of velocity.<br>
+Helpful for sprites like this ship.</p>
+<p><img src="./ship.gif" width="500px"></p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="vim,gamedev" data-listing-date-sort="1722830400000" data-listing-file-modified-sort="1722914770739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/07-devlog-day6/index.html"> <p class="card-img-top"><img src="posts/07-devlog-day6/ship.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/07-devlog-day6/index.html">
-<h3 class="no-anchor listing-title">
-Devlog Day 6
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('vim'); return false;">
-vim
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('gamedev'); return false;">
-gamedev
-</div>
-</div>
-<a href="./posts/07-devlog-day6/index.html">
-<div class="listing-description">
-<p>Vim practice and player movement with normalized vectors in Godot</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/07-devlog-day6/index.html">
-<div class="listing-date">
-Aug 5, 2024
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="vim,gamedev,theprimagean" data-listing-date-sort="1722744000000" data-listing-file-modified-sort="1722836651708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/06-devlog-day5/index.html"> <p class="card-img-top"><img src="posts/06-devlog-day5/ship.gif"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/06-devlog-day5/index.html">
-<h3 class="no-anchor listing-title">
-Devlog Day 5
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('vim'); return false;">
-vim
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('gamedev'); return false;">
-gamedev
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('theprimagean'); return false;">
-theprimagean
-</div>
-</div>
-<a href="./posts/06-devlog-day5/index.html">
-<div class="listing-description">
-<p>Vim and moving sprites in Godot</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/06-devlog-day5/index.html">
-<div class="listing-date">
-Aug 4, 2024
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="gamedev,video games,tech" data-listing-date-sort="1722657600000" data-listing-file-modified-sort="1722751184829" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/05-devlog-day4/index.html"> <p class="card-img-top"><img src="posts/05-devlog-day4/gdquest_boy.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/05-devlog-day4/index.html">
-<h3 class="no-anchor listing-title">
-Devlog Day 4
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('gamedev'); return false;">
-gamedev
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('video games'); return false;">
-video games
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tech'); return false;">
-tech
-</div>
-</div>
-<a href="./posts/05-devlog-day4/index.html">
-<div class="listing-description">
-<p>GDScript</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/05-devlog-day4/index.html">
-<div class="listing-date">
-Aug 3, 2024
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="gamedev,video games,tech" data-listing-date-sort="1722398400000" data-listing-file-modified-sort="1722582539727" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/04-devlog-day3/index.html"> <p class="card-img-top"><img src="posts/04-devlog-day3/turtle-game.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/04-devlog-day3/index.html">
-<h3 class="no-anchor listing-title">
-Devlog Day 3
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('gamedev'); return false;">
-gamedev
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('video games'); return false;">
-video games
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tech'); return false;">
-tech
-</div>
-</div>
-<a href="./posts/04-devlog-day3/index.html">
-<div class="listing-description">
-<p>GDScript</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/04-devlog-day3/index.html">
-<div class="listing-date">
-Jul 31, 2024
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="gamedev,video games,tech" data-listing-date-sort="1722398400000" data-listing-file-modified-sort="1722490321638" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/03-devlog-day2/index.html"> <p class="card-img-top"><img src="posts/03-devlog-day2/editor-screenshot.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/03-devlog-day2/index.html">
-<h3 class="no-anchor listing-title">
-Devlog Day 2
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('gamedev'); return false;">
-gamedev
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('video games'); return false;">
-video games
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tech'); return false;">
-tech
-</div>
-</div>
-<a href="./posts/03-devlog-day2/index.html">
-<div class="listing-description">
-<p>Tour of Godot</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/03-devlog-day2/index.html">
-<div class="listing-date">
-Jul 31, 2024
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="gamedev,video games,tech" data-listing-date-sort="1722312000000" data-listing-file-modified-sort="1722372700722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<div class="thumbnail">
-<p><a href="./posts/02-devlog-day1/index.html"> <p class="card-img-top"><img src="posts/02-devlog-day1/dodge_the_creeps_screenshot.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/02-devlog-day1/index.html">
-<h3 class="no-anchor listing-title">
-Devlog Day 1
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('gamedev'); return false;">
-gamedev
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('video games'); return false;">
-video games
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tech'); return false;">
-tech
-</div>
-</div>
-<a href="./posts/02-devlog-day1/index.html">
-<div class="listing-description">
-<p>Getting started with 2D Game Development in Godot</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/02-devlog-day1/index.html">
-<div class="listing-date">
-Jul 30, 2024
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="ethics,ai,tech" data-listing-date-sort="1697515200000" data-listing-file-modified-sort="1722370038673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
-<div class="thumbnail">
-<p><a href="./posts/01-algorithms-inherit-bias/index.html"> <p class="card-img-top"><img src="posts/01-algorithms-inherit-bias/ibm-ceo-tom-watson-sr-with-adolf.png" alt="IBM CEO Tom Watson Sr. with Adolf"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/01-algorithms-inherit-bias/index.html">
-<h3 class="no-anchor listing-title">
-Algorithms inherit the prejudices of their creators and society.
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ethics'); return false;">
-ethics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ai'); return false;">
-ai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tech'); return false;">
-tech
-</div>
-</div>
-<a href="./posts/01-algorithms-inherit-bias/index.html">
-<div class="listing-description">
-<p>My notes and thoughts on Deep Learning for Coders: Chapter 3 data ethics</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/01-algorithms-inherit-bias/index.html">
-<div class="listing-date">
-Oct 17, 2023
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="blog,fastai,deeplearning" data-listing-date-sort="1683864000000" data-listing-file-modified-sort="1694130706627" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
-<div class="thumbnail">
-<p><a href="./posts/00-first-steps-fastai/index.html"> <img src="./posts/00-first-steps-fastai/DALL·E-digital_art_cute_solarpunk_forest_guardian_robot.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/00-first-steps-fastai/index.html">
-<h3 class="no-anchor listing-title">
-First Steps: AI for Animal Advocacy with Fastai 🐇
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
-blog
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fastai'); return false;">
-fastai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('deeplearning'); return false;">
-deeplearning
-</div>
-</div>
-<a href="./posts/00-first-steps-fastai/index.html">
-<div class="listing-description">
-This charming little forest robot was created using OpenAI’s DALL·E 2 model, based on my prompt: “Digital art cute solarpunk forest guardian robot”.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/00-first-steps-fastai/index.html">
-<div class="listing-date">
-May 12, 2023
-</div>
-<div class="listing-author">
-Evan Lesmez
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

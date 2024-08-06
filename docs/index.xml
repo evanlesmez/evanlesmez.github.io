@@ -10,7 +10,76 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sat, 03 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 05 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 6</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/07-devlog-day6/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I practiced some Vim today in the same Practical Vim book.<br>
+Learned that Vim writes history to <code>vim info</code> file that persists across machine boots.<br>
+The history is not only execute commands but also search patterns and I am sure other commands.<br>
+In execute command mode <code>Ctrl-d</code>.<br>
+<code>*</code> in normal mode searches for the hovered word.<br>
+<code>&lt;C-r&gt;&lt;C-w&gt;</code> in execute mode copies the current word in as pattern for things like substitutions.</p>
+<p>In Godot, I practiced making a space ship move with player inputs.<br>
+The most important parts were adding the controls in the Project settings.<br>
+The <code>direction</code> is stored as a <code>2DVector</code>.<br>
+The <code>Input</code> object has an <code>axis</code> method that accepts two input arguments like “move_down” or “move_up” to map values between -1 and 1 to.<br>
+<code>direction</code> is updated to match these values and then scaled by whatever speed is desired.<br>
+Lastly, the <code>direction</code> vector must be <code>normalized</code> if the <code>length</code> is above 1.0 which happens when moving diagonally which would make the ship move 1.4 times faster #pythagoreantheorum.</p>
+<p><img src="https://evanlesmez.com/posts/07-devlog-day6/ship.png" style="height:300px;"></p>
+
+
+
+ ]]></description>
+  <category>vim</category>
+  <category>gamedev</category>
+  <guid>https://evanlesmez.com/posts/07-devlog-day6/index.html</guid>
+  <pubDate>Mon, 05 Aug 2024 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Devlog Day 5</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/06-devlog-day5/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>After watching some ThePrimegean vids, I was inspired to get back into using NeoVim as my primary text editor.<br>
+I had the “Practical Vim” book lying around so I picked it back up again and started practicing.</p>
+<p>Some Vim notes I took today:<br>
+Ex Commands are intended for longer range where as normal commands are more local to a region of the document being edited.<br>
+Capital V is a full linve visual select rather than lower v.<br>
+<code>:t</code> or <code>:co</code> is shortand for copy.<br>
+<code>:m</code> is shorthand for move <code>:$</code> is end of file.<br>
+<code>:1</code> is first line<br>
+<code>:'&lt;,'&gt;</code> is current visual selection.<br>
+<code>:{range} normal .</code> runs the prev normal mode command on the range. this builds off that . is the key to repeat the last normal mode command. <code>:%:</code> repeats the last EX command</p>
+<p>Back to GDQuest Godot:<br>
+<a href="https://github.com/joshnajera/godot-vim">From the godot-vim repo</a> I downloaded the zip and enabled the plugin for Vim bindings in Godot editor.<br>
+Some of the bindings are missing like execute mode and <code>Ctrl+[</code> to exit insert mode unfortunately.<br>
+In Godot, position of objects is manipulated by the <code>position</code> attribute of the node.<br>
+You can add or subtract 2D vectors to change the position relative to the prev position in the <code>_process</code> method of the node.<br>
+Vector2D comes with an <code>angle</code> method that gives the angle of the vector probably in relation to to the positive direction of the x axis.<br>
+Using this angle, you can manipulate the <code>rotation</code> attribute of a node to keep the direction of the object facing the direction of velocity.<br>
+Helpful for sprites like this ship.</p>
+<p><img src="https://evanlesmez.com/posts/06-devlog-day5/ship.gif" width="500px"></p>
+
+
+
+ ]]></description>
+  <category>vim</category>
+  <category>gamedev</category>
+  <category>theprimagean</category>
+  <guid>https://evanlesmez.com/posts/06-devlog-day5/index.html</guid>
+  <pubDate>Sun, 04 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 4</title>
   <dc:creator>Evan Lesmez</dc:creator>
