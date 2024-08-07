@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://evanlesmez.com/index.html</loc>
-    <lastmod>2024-08-06T03:26:32.079Z</lastmod>
+    <lastmod>2024-08-07T03:18:54.903Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/posts/03-devlog-day2/index.html</loc>
-    <lastmod>2024-08-06T03:26:31.519Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/posts/04-devlog-day3/index.html</loc>
-    <lastmod>2024-08-06T03:26:31.199Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/posts/01-algorithms-inherit-bias/index.html</loc>
-    <lastmod>2024-08-06T03:26:30.789Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/posts/05-devlog-day4/index.html</loc>
-    <lastmod>2024-08-06T03:26:30.039Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/about.html</loc>
-    <lastmod>2024-08-06T03:26:29.869Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</loc>
-    <lastmod>2024-08-06T03:26:30.539Z</lastmod>
-  </url>
-  <url>
-    <loc>https://evanlesmez.com/posts/02-devlog-day1/index.html</loc>
-    <lastmod>2024-08-06T03:26:30.959Z</lastmod>
+    <lastmod>2024-08-07T03:18:54.323Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/posts/07-devlog-day6/index.html</loc>
-    <lastmod>2024-08-06T03:26:31.359Z</lastmod>
+    <lastmod>2024-08-07T03:18:53.983Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/02-devlog-day1/index.html</loc>
+    <lastmod>2024-08-07T03:18:53.583Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/00-first-steps-fastai/index.html</loc>
+    <lastmod>2024-08-07T03:18:53.173Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/about.html</loc>
+    <lastmod>2024-08-07T03:18:52.523Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/05-devlog-day4/index.html</loc>
+    <lastmod>2024-08-07T03:18:52.683Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/01-algorithms-inherit-bias/index.html</loc>
+    <lastmod>2024-08-07T03:18:53.413Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/04-devlog-day3/index.html</loc>
+    <lastmod>2024-08-07T03:18:53.823Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/08-devlog-day7/index.html</loc>
+    <lastmod>2024-08-07T03:18:54.163Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/posts/06-devlog-day5/index.html</loc>
-    <lastmod>2024-08-06T03:26:31.689Z</lastmod>
+    <lastmod>2024-08-07T03:18:54.483Z</lastmod>
   </url>
 </urlset>

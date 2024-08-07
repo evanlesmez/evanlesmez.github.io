@@ -10,7 +10,55 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Mon, 05 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 06 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 7</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/08-devlog-day7/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I continued working through the Pracitval Vim book today.<br>
+I learned about the cmd line window which is different from the command-line mode.<br>
+Accidentally I have ended up there numerous time by accidentally typing <code>q:</code> rather than <code>:q</code> to exit a file.<br>
+Previously, it had nover occurred to me to examine what was was going on and instead I would repeat <code>:q</code> twice to exit the mysterious window I was trapped in and then to exit the file as intended.<br>
+Now, I realize that this window allows you to see the history of command you have typed into the command mode as a buffer.<br>
+You may navigate the history as you like and even manipulate it to run new commands.<br>
+For example, you could find a command you had split into two like <code>lint file</code> and <code>test file</code>.<br>
+If you hover over <code>lint file</code> in cmd line window, and go to the end with <code>A</code> and insert a pipe char <code>|</code>, you can then enter <code>J</code> to move the line below to the current line which should result in <code>lint file | test file</code>.<br>
+Then <cr> aka “Enter” to run your now single line command.</cr></p>
+<p>I also learned you may enter a enw shell session by typing <code>:shell</code> in the command mode but more interesting is that you can background Vim or any shell process with <code>Ctrl+Z</code>.<br>
+Then you may list jobs with <code>jobs</code>.<br>
+If you wish to reattach a job, just foreground it with <code>fg</code>.<br>
+Definetly going to use this in the future.</p>
+<p>Other random notes:<br>
+<code>:ls</code> list the open vim buffers while <code>:!ls</code> does what any UNIX user would expect.<br>
+<code>write !sh</code> is a neat quick way to run each command in the current buffer in shell environment.<br>
+<code>read</code> instead puts command output into the buffer.<br>
+<code>%</code> refers to the current filename of the buffer.<br>
+<code>!</code> is reffered to as “bang” for executing shell commands.</p>
+<p>On the Godot front:</p>
+<p><img src="https://evanlesmez.com/posts/08-devlog-day7/ship-steering-vector.gif" height="500px"></p>
+<p>I completed adding a boost effect to the moving ship by hitting spacebar.<br>
+That was pretty simple as it only required increasing the speed to multiply the direction velocity vector by.<br>
+More interesting was the method for smoothing movement.<br>
+As shown in the gif above, the method to determine the desired velocity vector was to multiply the speed scalar by the direction vector based on the current movement inputs (including boost).</p>
+<p>Subtracting the current velocity from the desired velocity vector gives us the steering vector or the vector that points in the direction the ship should turn to correct course smoothly from its current state.<br>
+Then we introduce another scalar that we can call <code>steering_amplifier</code> between 0 to 1 (but really above that because we multiply by the delta which is below 1) that is used to determine the lagginess feel of the controls.<br>
+A high value would make the controls not lag at all but also look jittery.<br>
+A low value would feel laggy for movevent of the ship to even stop moving after releasing the controls, however can’t argue it not smoother than the higher steering values.</p>
+
+
+
+ ]]></description>
+  <category>vim</category>
+  <category>gamedev</category>
+  <category>tech</category>
+  <guid>https://evanlesmez.com/posts/08-devlog-day7/index.html</guid>
+  <pubDate>Tue, 06 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 6</title>
   <dc:creator>Evan Lesmez</dc:creator>

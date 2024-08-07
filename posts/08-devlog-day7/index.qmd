@@ -1,13 +1,12 @@
 ---
-title: "Devlog Day 6"
-description: "Vim cmd line window & shell practice +"
+title: "Devlog Day 7"
+description: "Vim cmd line window & sh + smoothing movement in Godot"
 author: "Evan Lesmez"
 date: "2024-08-06"
 categories:
   - vim
   - gamedev
   - tech
-draft: true
 ---
 I continued working through the Pracitval Vim book today.  
 I learned about the cmd line window which is different from the command-line mode.  
@@ -31,3 +30,17 @@ Other random notes:
 `%` refers to the current filename of the buffer.  
 `!` is reffered to as "bang" for executing shell commands.  
 
+
+On the Godot front:  
+
+<img src="./ship-steering-vector.gif" height="500px"/>  
+
+I completed adding a boost effect to the moving ship by hitting spacebar.  
+That was pretty simple as it only required increasing the speed to multiply the direction velocity vector by.  
+More interesting was the method for smoothing movement.  
+As shown in the gif above, the method to determine the desired velocity vector was to multiply the speed scalar by the direction vector based on the current movement inputs (including boost).  
+
+Subtracting the current velocity from the desired velocity vector gives us the steering vector or the vector that points in the direction the ship should turn to correct course smoothly from its current state.  
+Then we introduce another scalar that we can call `steering_amplifier` between 0 to 1 (but really above that because we multiply by the delta which is below 1) that is used to determine the lagginess feel of the controls.  
+A high value would make the controls not lag at all but also look jittery.  
+A low value would feel laggy for movevent of the ship to even stop moving after releasing the controls, however can't argue it not smoother than the higher steering values.  
