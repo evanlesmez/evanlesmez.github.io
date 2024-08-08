@@ -1,0 +1,52 @@
+---
+title: "Devlog Day 8"
+description: "Vim  + a lil Godot + pirate software"
+author: "Evan Lesmez"
+date: "2024-08-07"
+categories:
+  - vim
+  - gamedev
+  - godot 
+---
+<img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3254509/vim-icon-md.png" style="height:40px"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png" style="height:40px"/>
+
+Some quick notes on Vim:  
+Buffers are in memory representations of files (and probably other things)  
+You can put a list of vim commands into a file and `source` it to run on buffers.  
+e.g. `:source {script}.vim` in command mode  
+
+`vim {pattern}*.{extension}` opens a bunch of files matching the wildcard into buffers.  
+`:ls` or :args` lists the buffers open.  
+`:first` `:next` or `:n`  `:prev` or `:previous` or `:bnext` or `:bprev` `:bfirst` `:blast` ... these all iterate through open buffers.  
+
+
+On Godot I completed a practice problem basd on the steering algorithm from yesterday.  
+I got a little stuck as the algorithm confused me.  
+After looking through the notes again it became more clear.  
+
+```py
+x = input.axis(x) # right or left
+y = input.axis(y) # down or up
+
+max_speed = 600 # px per frame
+steering_factor = 10.0 # how jittery should the movement be to a new input
+
+direction = Vector2D(x,y).normalized() # normalized to keep length less than 1
+
+desired_velocity = max_speed * direction
+
+# this part is the visual of the vector that connects from the head of the current velocity to the head of the desired_velocity
+steering_vector =  desired_velocity - velocity # velocity is the previous velocity
+
+# this part confused me. Why add to the velocity? 
+# We are adding the steering_vector scaled down by the delta (probably 1/60th of a seond given usual 60 FPS) 
+# It is also scaled down by the arbitrary steering_factor we defined above. So as long as the steering_factor is less than 60, there should be some smoothing
+# At 60 I belive it would look the same as never smoothing the velocity as you are adding the difference between the desired_velocity and the current velocity to the current velocity.
+# Cancel out current velocity, you are left with just the desired_velocity
+velocity += steering_vector * steering_factor * delta
+position = velocity * delta
+```
+
+
+
