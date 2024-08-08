@@ -1,6 +1,6 @@
 ---
 title: "Devlog Day 8"
-description: "Vim  + a lil Godot + pirate software"
+description: "Vim buffers + a steering algorithm Godot"
 author: "Evan Lesmez"
 date: "2024-08-07"
 categories:
