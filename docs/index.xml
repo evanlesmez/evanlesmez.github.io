@@ -10,7 +10,66 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Wed, 07 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 10 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 9</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/10-devlog-day9/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I missed a few days ¯\<em>(ツ)</em>/¯<br>
+Oh well.<br>
+I DIDN’T MISS TODAY.</p>
+<p>On the Godot front, I completed adding some extra art and camera work in line with the GQQuest tutorial.<br>
+Here is what it ended up looking like:<br>
+<img src="https://evanlesmez.com/posts/10-devlog-day9/ship-in-space.gif" style="300em"></p>
+<p>The Camera2D Node was simple, just needed to be plopped as a child of a node (the Ship node in this case) to cause the screen to follow it.<br>
+The thruster rendering code though, not so simple.<br>
+I don’t understand a lot of what was going on with it.<br>
+Also refreshed on how <code>vector.normalized()</code> works under the hood to ensure pointing diagonally is the same speed as horizontal/vertical.<br>
+The math stems from the Pythagorean theorem for right angle triangles.<br>
+The lengths of the two sides squared, summed, and square rooted is equal to the length of the hypotenuse.<br>
+A given vector, like the direction the player wishes to travel at, has length equal to the hypotenuse of the triangle formed by the x and y arguments of the vector.<br>
+One side could be 0,0 o x,0, the next side is the x,0 to x,y, and the hypotenuse is 0,0 to x,y.</p>
+<p>So to normalize a vector, take the length aka the hypotenuse of the triangle formed by the vector, and divide the x and y by it, essentially turning both into a fraction of the the total length of the vector.<br>
+That made sense to me at least.</p>
+<section id="vim-buffers-arent-scary" class="level2">
+<h2 class="anchored" data-anchor-id="vim-buffers-arent-scary">Vim buffers aren’t scary</h2>
+<p>Early on when starting to program I heard the word ‘buffer’ thrown around a lot and I wasn’t sure what it exactly meant.<br>
+I imagined kind of like the buffers on the side of roads providing safety by taking up space, the concept of buffers in computer science might be some space in memory that is occupied to make an application more secure or reliable (kind of like roadway safety) in someway.<br>
+Well in Vim, that idea is close but it is more like the buffers are in memory representations of the files you open to manipulate.<br>
+So not so much reliability or security, and more like core to how the program functions.</p>
+<p>Some notes on buffer commands:<br>
+Buffers can be opened via glob wildcars like “*” or even “**” for directory recursive file matching.<br>
+Common patterns would be *.{extension}<br>
+You can list multiple glob patterns like <code>vim **/*.js **/*.go</code></p>
+<p><code>args</code> are seperate from bufers opened.<br>
+It’s kind of like keeping program windows open in different desktops.<br>
+Desktop1 with a few programs would be the args and all of the programs opened all together are the buffers.<br>
+<code>:ls</code> would show every program while <code>args</code> would show desktop1’s programs.<br>
+<code>args {arglist}</code> clears the current argslist for the new one.<br>
+Use glob patterns or filenames however you please for the <code>arglist</code>.</p>
+<p>Hidden buffers had gotten me before.<br>
+When making a change to a buffer and trying to quit or move to a different buffer, vim will warn you that you have changes that are not written yet.<br>
+Kinda nice when you think about it, kind frustrating when you haven’t thought about it and are stuck in a vim window you don’t know how to exit.<br>
+Most of the time this is helpful reminder but in the case of <code>:argdo</code> when you want to execute commands on all of the buffers in arglist, if the buffers are manipulated the command will be interrupted on each buffer.<br>
+This behavior can be disabled with the <code>hidden</code> setting flag.</p>
+<p>Thank for reading.<br>
+<img src="https://evanlesmez.com/posts/10-devlog-day9/https:/media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>vim</category>
+  <category>gamedev</category>
+  <category>godot</category>
+  <guid>https://evanlesmez.com/posts/10-devlog-day9/index.html</guid>
+  <pubDate>Sat, 10 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 8</title>
   <dc:creator>Evan Lesmez</dc:creator>

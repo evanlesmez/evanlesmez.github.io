@@ -1,0 +1,56 @@
+---
+title: "Devlog Day 9"
+description: "Camera work in Godot and Vim buffers"
+author: "Evan Lesmez"
+date: "2024-08-10"
+categories:
+  - vim
+  - gamedev
+  - godot 
+---
+I missed a few days ¯\\_(ツ)_/¯  
+Oh well.  
+I DIDN'T MISS TODAY.  
+
+On the Godot front, I completed adding some extra art and camera work in line with the GQQuest tutorial.  
+Here is what it ended up looking like:  
+<img src="./ship-in-space.gif" style="300em">
+
+The Camera2D Node was simple, just needed to be plopped as a child of a node (the Ship node in this case) to cause the screen to follow it.  
+The thruster rendering code though, not so simple.  
+I don't understand a lot of what was going on with it.  
+Also refreshed on how `vector.normalized()` works under the hood to ensure pointing diagonally is the same speed as horizontal/vertical.  
+The math stems from the Pythagorean theorem for right angle triangles.  
+The lengths of the two sides squared, summed, and square rooted is equal to the length of the hypotenuse.  
+A given vector, like the direction the player wishes to travel at, has length equal to the hypotenuse of the triangle formed by the x and y arguments of the vector.  
+One side could be 0,0 o x,0, the next side is the x,0 to x,y, and the hypotenuse is 0,0 to x,y.  
+
+So to normalize a vector, take the length aka the hypotenuse of the triangle formed by the vector, and divide the x and y by it, essentially turning both into a fraction of the the total length of the vector.  
+That made sense to me at least.  
+
+## Vim buffers aren't scary
+Early on when starting to program I heard the word 'buffer' thrown around a lot and I wasn't sure what it exactly meant.  
+I imagined kind of like the buffers on the side of roads providing safety by taking up space, the concept of buffers in computer science might be some space in memory that is occupied to make an application more secure or reliable (kind of like roadway safety) in someway.  
+Well in Vim, that idea is close but it is more like the buffers are in memory representations of the files you open to manipulate.  
+So not so much reliability or security, and more like core to how the program functions.  
+
+Some notes on buffer commands:  
+Buffers can be opened via glob wildcars like "*" or even "**" for directory recursive file matching.  
+Common patterns would be *.{extension}  
+You can list multiple glob patterns  like `vim **/*.js **/*.go`
+
+`args` are seperate from bufers opened.  
+It's kind of like keeping program windows open in different desktops.  
+Desktop1 with a few programs would be the args and all of the programs opened all together are the buffers.  
+`:ls` would show every program while `args` would show desktop1's programs.  
+`args {arglist}` clears the current argslist for the new one.  
+Use glob patterns or filenames however you please for the `arglist`.  
+
+Hidden buffers had gotten me before.  
+When making a change to a buffer and trying to quit or move to a different buffer, vim will warn you that you have changes that are not written yet.  
+Kinda nice when you think about it, kind frustrating when you haven't thought about it and are stuck in a vim window you don't know how to exit.  
+Most of the time this is helpful reminder but in the case of `:argdo` when you want to execute commands on all of the buffers in arglist, if the buffers are manipulated the command will be interrupted on each buffer.  
+This behavior can be disabled with the `hidden` setting flag.  
+
+Thank for reading.  
+<img src="https://media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif">
