@@ -1,0 +1,40 @@
+---
+title: "Devlog Day 10"
+description: "Vim window management"
+author: "Evan Lesmez"
+date: "2024-08-11"
+categories:
+  - vim
+  - gamedev
+  - godot 
+---
+## Vim windows
+Today I learned about splitting and managing windows in Vim.  
+I had some experience with this before but it was a good refresher.  
+My problem is that I sometimes get mixed up with tmux cmds and Vim ones.  
+In tmux, Ctrl-B is the beginning of commands.  
+In Vim, Ctrl-W is the beginning of window commands.  
+
+```sh
+<Ctrl-w>s # split window intro rows
+<Ctrl-w>v # split window vertically into columns
+:sp {file} # split rows loading file into new window
+:vsp {file} # split cols loading file into new window
+
+<Ctrl-w>w or <Ctrl-w> # cycle between windows
+# you can also ctrl-w into any hjkl move
+
+:clo # close active window but use :q its easier or <Ctrl-w>c
+:on[ly] or <Ctrl-w>o # close all other windows except current
+<Ctrl-w>= # equalize the dimensions of all windows
+<Ctrl-w>_ # max the current window height
+<Ctrl-w>| # max the current window width
+
+# Moving windows
+<Ctrl-w>r or R # rotates the windows for viewing
+<Ctrl-w>x # swap neighbor window for current
+<Ctrl-w>[hjkl] # bring window to the top of that direction
+```
+The moving section came from this [vimcast on Vim windows](http://vimcasts.org/episodes/working-with-windows/). 
+
+## Godot Loot?
