@@ -1,6 +1,6 @@
 ---
 title: "Devlog Day 10"
-description: "Vim window management"
+description: "Vim window management and Godot Area2D physics"
 author: "Evan Lesmez"
 date: "2024-08-11"
 categories:
@@ -37,4 +37,30 @@ In Vim, Ctrl-W is the beginning of window commands.
 ```
 The moving section came from this [vimcast on Vim windows](http://vimcasts.org/episodes/working-with-windows/). 
 
-## Godot Loot?
+## Godot Area2D Collision physics
+So in previous lessons, I only had tinkered with the `Sprite2D` node which is for visuals and animations.  
+However, to get some real physics going between objects, like a collision, `Area2D` is the node for the job.  
+It needs a `CollisionObject2D` as a child node which in turn needs a shape to use.  
+With those nodes setup, the Area2D signal `area_entered` may be connected to respond to when another Area2D node collides with this one.  
+`area_entered.connect` can be used in the attached script instead of using the signal editor.  
+It is common to place it in the `_ready()` function which is what loads the node in the node tree kind of like `__init__` or `constructor` for a class in OOP.  
+The convention for the callback to connect is to name it `_on_area_entered` implying it is a private method for this node and that it is connected to that signal name.  
+That pattern will be reused for other signals.  
+
+
+The callback for the case of loot being picked up by a player will likely cause the node to disappear, which means we will use `queue_free`.  
+`queue_free` means to queue up freeing the memory allocated to the node so it will deleted.  
+
+```py
+func _ready():
+  area_entered.connect(_on_area_entered)
+  
+func _on_area_entered(area_that_entered: Area2D):
+  queue_free()
+```
+
+That pattern all together is used in scenes like this:  
+<img src="./area2d-collisions.gif" height='500px'>
+
+Thank for reading.  
+<img src="https://media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif">
