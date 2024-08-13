@@ -1,0 +1,45 @@
+---
+title: "Devlog Day 12"
+description: "Vim tab layouts"
+author: "Evan Lesmez"
+date: "2024-08-13"
+categories:
+  - gamedev
+  - godot
+  - vim
+---
+## Vim
+### Tabs
+`:h tabpage`  
+
+Tabs in Vim are similar to tabs in other programs however the key difference is that one tab in Vim does not map to one file.  
+Instead, a tab in vim can have several buffers within it as well a window panes that show those buffers.  
+
+<img src="./vim-tabs-demo.gif" style="width:100%">  
+
+Here are the commands:  
+
+```sh
+:lcd # set the working dir for the current window
+:tabe {filename} # like edit but open buffer in new tab
+<C-w>T # break the window pane into a new tab
+:tabc # close current tab
+:tabo # close other tabs
+:tabn or gt # next tab
+:tabp or gT # prev tab
+:tabmove {N} # move the Nth tab to beginning
+```
+
+### Files
+
+I also learned about how to open files to buffers quicker rather than typing out full paths.  
+I already had discovered the `%` in command mode which represents the current buffer's filepath.  
+Combine it into `: %:h` and press <Tab> and the full path to the current buffer is completed for you.  
+This is handy for when you opened Vim at the root project dir but are opening files nested a few folders down.  
+If you already have one open, instead of typing out path from root, you can type the path out relative to the current folder.  
+
+## Godot
+
+Thanks for reading!
+
+<img src="https://media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif" style="width:100%">
