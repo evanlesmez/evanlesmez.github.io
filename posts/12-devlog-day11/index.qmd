@@ -6,6 +6,7 @@ date: "2024-08-12"
 categories:
   - gamedev
   - godot
+  - tools
 ---
 Only had time for some gamedev today.  
 I learned a lot about [memcached](https://www.memcached.org) though which is an earlier, kind of worse version of redis.  
@@ -17,10 +18,11 @@ Useful for LAN servers though, especially old ones that don't support SSH.
 Completely tangential, I got more into tiling window management and discovered [komorebi](https://github.com/LGUG2Z/komorebi) for Windows.  
 On Linux distributions i3 and other programs are available but it is nice to have an option for Windows so my desktop can look like this.  
 
-<img src="./desktop-screenshot.png" style="width:75vw">
+<img src="./desktop-screenshot.png" style="width:100%">
 
 ## Health pickups
-<img src="./health-pack-pickups.gif" style="max-height:40em;max-width:70vw"/>  
+<img src="./health-pack-pickups.gif" style="max-height:40em;max-width:100%"/>  
+
 In the gif, you see the ship driving around and picking up the health packs.  
 In the remote scene tree on the left, the nodes of the health packs are removed once picked up.  
 This is from the signals emited from the `Area2D` nodes that have a callback to `queue_free`.  
