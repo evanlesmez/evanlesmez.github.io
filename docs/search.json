@@ -144,7 +144,7 @@
     "href": "posts/12-devlog-day11/index.html",
     "title": "Devlog Day 11",
     "section": "",
-    "text": "Only had time for some gamedev today.\nI learned a lot about memcached though which is an earlier, kind of worse version of redis.\nUseful for caching DB queries and probably other expensive data fetching services.\nAlso in turn learned about telnet which is an earlier, definetly worse version of SSH.\nWorse because it has no encryption and the protocol for communicating with the server is not as intuitive.\nUseful for LAN servers though, especially old ones that don’t support SSH."
+    "text": "Only had time for some gamedev today.\nI learned a lot about memcached though which is an earlier, kind of worse version of redis.\nUseful for caching DB queries and probably other expensive data fetching services.\nAlso in turn learned about telnet which is an earlier, definetly worse version of SSH.\nWorse because it has no encryption and the protocol for communicating with the server is not as intuitive.\nUseful for LAN servers though, especially old ones that don’t support SSH.\nCompletely tangential, I got more into tiling window management and discovered komorebi for Windows.\nOn Linux distributions i3 and other programs are available but it is nice to have an option for Windows so my desktop can look like this."
   },
   {
     "objectID": "posts/12-devlog-day11/index.html#health-pickups",

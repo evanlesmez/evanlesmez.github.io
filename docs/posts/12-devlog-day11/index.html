@@ -197,14 +197,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Only had time for some gamedev today.<br>
-I learned a lot about <a href="">memcached</a> though which is an earlier, kind of worse version of redis.<br>
+I learned a lot about <a href="https://www.memcached.org">memcached</a> though which is an earlier, kind of worse version of redis.<br>
 Useful for caching DB queries and probably other expensive data fetching services.<br>
 Also in turn learned about telnet which is an earlier, definetly worse version of SSH.<br>
 Worse because it has no encryption and the protocol for communicating with the server is not as intuitive.<br>
 Useful for LAN servers though, especially old ones that don’t support SSH.</p>
+<p>Completely tangential, I got more into tiling window management and discovered <a href="https://github.com/LGUG2Z/komorebi">komorebi</a> for Windows.<br>
+On Linux distributions i3 and other programs are available but it is nice to have an option for Windows so my desktop can look like this.</p>
+<p><img src="./desktop-screenshot.png" style="width:75vw"></p>
 <section id="health-pickups" class="level2">
 <h2 class="anchored" data-anchor-id="health-pickups">Health pickups</h2>
-<p><img src="./health-pack-pickups.gif" style="max-height:40em;max-width:60vw"><br>
+<p><img src="./health-pack-pickups.gif" style="max-height:40em;max-width:70vw"><br>
 In the gif, you see the ship driving around and picking up the health packs.<br>
 In the remote scene tree on the left, the nodes of the health packs are removed once picked up.<br>
 This is from the signals emited from the <code>Area2D</code> nodes that have a callback to <code>queue_free</code>.<br>
