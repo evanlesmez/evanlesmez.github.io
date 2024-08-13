@@ -56,27 +56,6 @@
     "text": "Today I completed the intro to GDSript games and learned a few interesting things:\nThe _process builtin function is the “game loop” of Godot to place code that needs to trigger every frame.\nIt has a parameter called ‘delta’.\nDelta is a time difference since the previous frame.\nReferencing delta in calculations helps the game feel more smooth across various frame rates.\nlerp is a function that returns a weighted average between two values (linear interpolation).\nYou can auto type hint with the := operator like var name := \"gibby\".\nMost importantly, GDScript is basically Python.\nUp next is working on a top-down action game in space."
   },
   {
-    "objectID": "posts/10-devlog-day9/index.html",
-    "href": "posts/10-devlog-day9/index.html",
-    "title": "Devlog Day 9",
-    "section": "",
-    "text": "I missed a few days ¯\\(ツ)/¯\nOh well.\nI DIDN’T MISS TODAY.\nOn the Godot front, I completed adding some extra art and camera work in line with the GQQuest tutorial.\nHere is what it ended up looking like:\nThe Camera2D Node was simple, just needed to be plopped as a child of a node (the Ship node in this case) to cause the screen to follow it.\nThe thruster rendering code though, not so simple.\nI don’t understand a lot of what was going on with it.\nAlso refreshed on how vector.normalized() works under the hood to ensure pointing diagonally is the same speed as horizontal/vertical.\nThe math stems from the Pythagorean theorem for right angle triangles.\nThe lengths of the two sides squared, summed, and square rooted is equal to the length of the hypotenuse.\nA given vector, like the direction the player wishes to travel at, has length equal to the hypotenuse of the triangle formed by the x and y arguments of the vector.\nOne side could be 0,0 o x,0, the next side is the x,0 to x,y, and the hypotenuse is 0,0 to x,y.\nSo to normalize a vector, take the length aka the hypotenuse of the triangle formed by the vector, and divide the x and y by it, essentially turning both into a fraction of the the total length of the vector.\nThat made sense to me at least."
-  },
-  {
-    "objectID": "posts/10-devlog-day9/index.html#vim-buffers-arent-scary",
-    "href": "posts/10-devlog-day9/index.html#vim-buffers-arent-scary",
-    "title": "Devlog Day 9",
-    "section": "Vim buffers aren’t scary",
-    "text": "Vim buffers aren’t scary\nEarly on when starting to program I heard the word ‘buffer’ thrown around a lot and I wasn’t sure what it exactly meant.\nI imagined kind of like the buffers on the side of roads providing safety by taking up space, the concept of buffers in computer science might be some space in memory that is occupied to make an application more secure or reliable (kind of like roadway safety) in someway.\nWell in Vim, that idea is close but it is more like the buffers are in memory representations of the files you open to manipulate.\nSo not so much reliability or security, and more like core to how the program functions.\nSome notes on buffer commands:\nBuffers can be opened via glob wildcars like “*” or even “**” for directory recursive file matching.\nCommon patterns would be *.{extension}\nYou can list multiple glob patterns like vim **/*.js **/*.go\nargs are seperate from bufers opened.\nIt’s kind of like keeping program windows open in different desktops.\nDesktop1 with a few programs would be the args and all of the programs opened all together are the buffers.\n:ls would show every program while args would show desktop1’s programs.\nargs {arglist} clears the current argslist for the new one.\nUse glob patterns or filenames however you please for the arglist.\nHidden buffers had gotten me before.\nWhen making a change to a buffer and trying to quit or move to a different buffer, vim will warn you that you have changes that are not written yet.\nKinda nice when you think about it, kind frustrating when you haven’t thought about it and are stuck in a vim window you don’t know how to exit.\nMost of the time this is helpful reminder but in the case of :argdo when you want to execute commands on all of the buffers in arglist, if the buffers are manipulated the command will be interrupted on each buffer.\nThis behavior can be disabled with the hidden setting flag.\nThank for reading."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Evan Lesmez",
-    "section": "",
-    "text": "This a blog about about my learning journey delving into topics like deep learning/AI, game development, other programming domains, and random ideas. I am a software engineer. My main passions are veganism and animal activism, games, and tech."
-  },
-  {
     "objectID": "posts/11-devlog-day10/index.html",
     "href": "posts/11-devlog-day10/index.html",
     "title": "Devlog Day 10",
@@ -96,6 +75,41 @@
     "title": "Devlog Day 10",
     "section": "Godot Area2D Collision physics",
     "text": "Godot Area2D Collision physics\nSo in previous lessons, I only had tinkered with the Sprite2D node which is for visuals and animations.\nHowever, to get some real physics going between objects, like a collision, Area2D is the node for the job.\nIt needs a CollisionObject2D as a child node which in turn needs a shape to use.\nWith those nodes setup, the Area2D signal area_entered may be connected to respond to when another Area2D node collides with this one.\narea_entered.connect can be used in the attached script instead of using the signal editor.\nIt is common to place it in the _ready() function which is what loads the node in the node tree kind of like __init__ or constructor for a class in OOP.\nThe convention for the callback to connect is to name it _on_area_entered implying it is a private method for this node and that it is connected to that signal name.\nThat pattern will be reused for other signals.\nThe callback for the case of loot being picked up by a player will likely cause the node to disappear, which means we will use queue_free.\nqueue_free means to queue up freeing the memory allocated to the node so it will deleted.\nfunc _ready():\n  area_entered.connect(_on_area_entered)\n  \nfunc _on_area_entered(area_that_entered: Area2D):\n  queue_free()\nThat pattern all together is used in scenes like this:\n\nThank for reading."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Evan Lesmez",
+    "section": "",
+    "text": "This a blog about about my learning journey delving into topics like deep learning/AI, game development, other programming domains, and random ideas. I am a software engineer. My main passions are veganism and animal activism, games, and tech."
+  },
+  {
+    "objectID": "posts/10-devlog-day9/index.html",
+    "href": "posts/10-devlog-day9/index.html",
+    "title": "Devlog Day 9",
+    "section": "",
+    "text": "I missed a few days ¯\\(ツ)/¯\nOh well.\nI DIDN’T MISS TODAY.\nOn the Godot front, I completed adding some extra art and camera work in line with the GQQuest tutorial.\nHere is what it ended up looking like:\nThe Camera2D Node was simple, just needed to be plopped as a child of a node (the Ship node in this case) to cause the screen to follow it.\nThe thruster rendering code though, not so simple.\nI don’t understand a lot of what was going on with it.\nAlso refreshed on how vector.normalized() works under the hood to ensure pointing diagonally is the same speed as horizontal/vertical.\nThe math stems from the Pythagorean theorem for right angle triangles.\nThe lengths of the two sides squared, summed, and square rooted is equal to the length of the hypotenuse.\nA given vector, like the direction the player wishes to travel at, has length equal to the hypotenuse of the triangle formed by the x and y arguments of the vector.\nOne side could be 0,0 o x,0, the next side is the x,0 to x,y, and the hypotenuse is 0,0 to x,y.\nSo to normalize a vector, take the length aka the hypotenuse of the triangle formed by the vector, and divide the x and y by it, essentially turning both into a fraction of the the total length of the vector.\nThat made sense to me at least."
+  },
+  {
+    "objectID": "posts/10-devlog-day9/index.html#vim-buffers-arent-scary",
+    "href": "posts/10-devlog-day9/index.html#vim-buffers-arent-scary",
+    "title": "Devlog Day 9",
+    "section": "Vim buffers aren’t scary",
+    "text": "Vim buffers aren’t scary\nEarly on when starting to program I heard the word ‘buffer’ thrown around a lot and I wasn’t sure what it exactly meant.\nI imagined kind of like the buffers on the side of roads providing safety by taking up space, the concept of buffers in computer science might be some space in memory that is occupied to make an application more secure or reliable (kind of like roadway safety) in someway.\nWell in Vim, that idea is close but it is more like the buffers are in memory representations of the files you open to manipulate.\nSo not so much reliability or security, and more like core to how the program functions.\nSome notes on buffer commands:\nBuffers can be opened via glob wildcars like “*” or even “**” for directory recursive file matching.\nCommon patterns would be *.{extension}\nYou can list multiple glob patterns like vim **/*.js **/*.go\nargs are seperate from bufers opened.\nIt’s kind of like keeping program windows open in different desktops.\nDesktop1 with a few programs would be the args and all of the programs opened all together are the buffers.\n:ls would show every program while args would show desktop1’s programs.\nargs {arglist} clears the current argslist for the new one.\nUse glob patterns or filenames however you please for the arglist.\nHidden buffers had gotten me before.\nWhen making a change to a buffer and trying to quit or move to a different buffer, vim will warn you that you have changes that are not written yet.\nKinda nice when you think about it, kind frustrating when you haven’t thought about it and are stuck in a vim window you don’t know how to exit.\nMost of the time this is helpful reminder but in the case of :argdo when you want to execute commands on all of the buffers in arglist, if the buffers are manipulated the command will be interrupted on each buffer.\nThis behavior can be disabled with the hidden setting flag.\nThank for reading."
+  },
+  {
+    "objectID": "posts/12-devlog-day11/index.html",
+    "href": "posts/12-devlog-day11/index.html",
+    "title": "Devlog Day 11",
+    "section": "",
+    "text": "Only had time for some gamedev today.\nI learned a lot about memcached though which is an earlier, kind of worse version of redis.\nUseful for caching DB queries and probably other expensive data fetching services.\nAlso in turn learned about telnet which is an earlier, definetly worse version of SSH.\nWorse because it has no encryption and the protocol for communicating with the server is not as intuitive.\nUseful for LAN servers though, especially old ones that don’t support SSH.\nCompletely tangential, I got more into tiling window management and discovered komorebi for Windows.\nOn Linux distributions i3 and other programs are available but it is nice to have an option for Windows so my desktop can look like this."
+  },
+  {
+    "objectID": "posts/12-devlog-day11/index.html#health-pickups",
+    "href": "posts/12-devlog-day11/index.html#health-pickups",
+    "title": "Devlog Day 11",
+    "section": "Health pickups",
+    "text": "Health pickups\n\nIn the gif, you see the ship driving around and picking up the health packs.\nIn the remote scene tree on the left, the nodes of the health packs are removed once picked up.\nThis is from the signals emited from the Area2D nodes that have a callback to queue_free.\nA common node pattern seems to be:\nArea2D\n|_ Sprite2D\n  - texture\n  |_ GPUParticles or ther Sprite2Ds or Line2Ds\n|_ CollisionShape2D\n  - shape\nThank for reading."
   },
   {
     "objectID": "posts/00-first-steps-fastai/index.html",
@@ -138,19 +152,5 @@
     "title": "Devlog Day 5",
     "section": "",
     "text": "After watching some ThePrimegean vids, I was inspired to get back into using NeoVim as my primary text editor.\nI had the “Practical Vim” book lying around so I picked it back up again and started practicing.\nSome Vim notes I took today:\nEx Commands are intended for longer range where as normal commands are more local to a region of the document being edited.\nCapital V is a full linve visual select rather than lower v.\n:t or :co is shortand for copy.\n:m is shorthand for move :$ is end of file.\n:1 is first line\n:'&lt;,'&gt; is current visual selection.\n:{range} normal . runs the prev normal mode command on the range. this builds off that . is the key to repeat the last normal mode command. :%: repeats the last EX command\nBack to GDQuest Godot:\nFrom the godot-vim repo I downloaded the zip and enabled the plugin for Vim bindings in Godot editor.\nSome of the bindings are missing like execute mode and Ctrl+[ to exit insert mode unfortunately.\nIn Godot, position of objects is manipulated by the position attribute of the node.\nYou can add or subtract 2D vectors to change the position relative to the prev position in the _process method of the node.\nVector2D comes with an angle method that gives the angle of the vector probably in relation to to the positive direction of the x axis.\nUsing this angle, you can manipulate the rotation attribute of a node to keep the direction of the object facing the direction of velocity.\nHelpful for sprites like this ship."
-  },
-  {
-    "objectID": "posts/12-devlog-day11/index.html",
-    "href": "posts/12-devlog-day11/index.html",
-    "title": "Devlog Day 11",
-    "section": "",
-    "text": "Only had time for some gamedev today.\nI learned a lot about memcached though which is an earlier, kind of worse version of redis.\nUseful for caching DB queries and probably other expensive data fetching services.\nAlso in turn learned about telnet which is an earlier, definetly worse version of SSH.\nWorse because it has no encryption and the protocol for communicating with the server is not as intuitive.\nUseful for LAN servers though, especially old ones that don’t support SSH.\nCompletely tangential, I got more into tiling window management and discovered komorebi for Windows.\nOn Linux distributions i3 and other programs are available but it is nice to have an option for Windows so my desktop can look like this."
-  },
-  {
-    "objectID": "posts/12-devlog-day11/index.html#health-pickups",
-    "href": "posts/12-devlog-day11/index.html#health-pickups",
-    "title": "Devlog Day 11",
-    "section": "Health pickups",
-    "text": "Health pickups\n\nIn the gif, you see the ship driving around and picking up the health packs.\nIn the remote scene tree on the left, the nodes of the health packs are removed once picked up.\nThis is from the signals emited from the Area2D nodes that have a callback to queue_free.\nA common node pattern seems to be:\nArea2D\n|_ Sprite2D\n  - texture\n  |_ GPUParticles or ther Sprite2Ds or Line2Ds\n|_ CollisionShape2D\n  - shape\nThank for reading."
   }
 ]
