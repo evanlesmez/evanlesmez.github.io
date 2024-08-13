@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://evanlesmez.com/index.html</loc>
-    <lastmod>2024-08-11T17:51:55.682Z</lastmod>
+    <lastmod>2024-08-13T04:23:40.081Z</lastmod>
   </url>
   <url>
     <loc>https://evanlesmez.com/posts/03-devlog-day2/index.html</loc>
@@ -55,5 +55,9 @@
   <url>
     <loc>https://evanlesmez.com/posts/06-devlog-day5/index.html</loc>
     <lastmod>2024-08-11T17:51:55.172Z</lastmod>
+  </url>
+  <url>
+    <loc>https://evanlesmez.com/posts/12-devlog-day11/index.html</loc>
+    <lastmod>2024-08-13T04:23:39.531Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,34 @@
+---
+title: "Devlog Day 11"
+description: "Godot4 Health pickups"
+author: "Evan Lesmez"
+date: "2024-08-12"
+categories:
+  - gamedev
+  - godot
+---
+Only had time for some gamedev today.  
+I learned a lot about [memcached]() though which is an earlier, kind of worse version of redis.  
+Useful for caching DB queries and probably other expensive data fetching services.  
+Also in turn learned about telnet which is an earlier, definetly worse version of SSH.  
+Worse because it has no encryption and the protocol for communicating with the server is not as intuitive.  
+Useful for LAN servers though, especially old ones that don't support SSH.  
+
+## Health pickups
+<img src="./health-pack-pickups.gif" style="max-height:40em;max-width:60vw"/>  
+In the gif, you see the ship driving around and picking up the health packs.  
+In the remote scene tree on the left, the nodes of the health packs are removed once picked up.  
+This is from the signals emited from the `Area2D` nodes that have a callback to `queue_free`.  
+A common node pattern seems to be:  
+```txt
+Area2D
+|_ Sprite2D
+  - texture
+  |_ GPUParticles or ther Sprite2Ds or Line2Ds
+|_ CollisionShape2D
+  - shape
+```
+
+Thank for reading.  
+
+<img src="https://media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif">
