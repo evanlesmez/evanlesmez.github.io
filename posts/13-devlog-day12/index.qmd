@@ -40,6 +40,18 @@ If you already have one open, instead of typing out path from root, you can type
 
 ## Godot
 
+Added a healthbar UI element to the spaceship health pickup scene.  
+Use a `Control` node with `ProgressBar` node nested.  
+Go into the control section of the inspector tab to change colors via theme overrides (or theme if one is made).  
+Note though that since these nodes are nested under a parent node that rotates, the bar will also rotate with this ship.  
+To prevent this, use `get_node("Sprite2D")` or `$Sprite2D` to access the rotation property of the ship directly.  
+I think this might be a problem though if the root scene node for the ship was not an Area2D with collision shape circle.  
+If the shape was anything else, rotating the Sprite without the collision shape would cause a desync in hitboxes relative to the visual sprite.  
+Could use the same `get_node` idea to also rotate the collision shape but maybe there is a cleaner way.  
+
+
+<img src="./ship-with-hbar.png" width="30%">
+
 Thanks for reading!
 
 <img src="https://media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif" style="width:100%">

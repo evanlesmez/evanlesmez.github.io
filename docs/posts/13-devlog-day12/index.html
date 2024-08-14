@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Evan Lesmez">
-<meta name="dcterms.date" content="2024-08-12">
-<meta name="description" content="Godot4 Health pickups">
+<meta name="dcterms.date" content="2024-08-13">
+<meta name="description" content="Vim tab layouts">
 
-<title>Evan Lesmez - Devlog Day 11</title>
+<title>Evan Lesmez - Devlog Day 12</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -152,16 +152,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Devlog Day 11</h1>
+      <h1 class="title">Devlog Day 12</h1>
                   <div>
         <div class="description">
-          Godot4 Health pickups
+          Vim tab layouts
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">gamedev</div>
                 <div class="quarto-category">godot</div>
-                <div class="quarto-category">tools</div>
+                <div class="quarto-category">vim</div>
               </div>
                   </div>
   </div>
@@ -179,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 12, 2024</p>
+        <p class="date">August 13, 2024</p>
       </div>
     </div>
     
@@ -197,30 +197,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Only had time for some gamedev today.<br>
-I learned a lot about <a href="https://www.memcached.org">memcached</a> though which is an earlier, kind of worse version of redis.<br>
-Useful for caching DB queries and probably other expensive data fetching services.<br>
-Also in turn learned about telnet which is an earlier, definetly worse version of SSH.<br>
-Worse because it has no encryption and the protocol for communicating with the server is not as intuitive.<br>
-Useful for LAN servers though, especially old ones that don’t support SSH.</p>
-<p>Completely tangential, I got more into tiling window management and discovered <a href="https://github.com/LGUG2Z/komorebi">komorebi</a> for Windows.<br>
-On Linux distributions i3 and other programs are available but it is nice to have an option for Windows so my desktop can look like this.</p>
-<p><img src="./desktop-screenshot.png" style="width:100%"></p>
-<section id="health-pickups" class="level2">
-<h2 class="anchored" data-anchor-id="health-pickups">Health pickups</h2>
-<p><img src="./health-pack-pickups.gif" style="max-height:40em;max-width:100%"></p>
-<p>In the gif, you see the ship driving around and picking up the health packs.<br>
-In the remote scene tree on the left, the nodes of the health packs are removed once picked up.<br>
-This is from the signals emited from the <code>Area2D</code> nodes that have a callback to <code>queue_free</code>.<br>
-A common node pattern seems to be:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Area2D</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>|_ Sprite2D</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  - texture</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  |_ GPUParticles or ther Sprite2Ds or Line2Ds</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>|_ CollisionShape2D</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  - shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Thank for reading.</p>
-<p><img src="https://media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif"></p>
+<section id="vim" class="level2">
+<h2 class="anchored" data-anchor-id="vim">Vim</h2>
+<section id="tabs" class="level3">
+<h3 class="anchored" data-anchor-id="tabs">Tabs</h3>
+<p><code>:h tabpage</code></p>
+<p>Tabs in Vim are similar to tabs in other programs however the key difference is that one tab in Vim does not map to one file.<br>
+Instead, a tab in vim can have several buffers within it as well a window panes that show those buffers.</p>
+<p><img src="./vim-tabs-demo.gif" style="width:100%"></p>
+<p>Here are the commands:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">:lcd</span> <span class="co"># set the working dir for the current window</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">:tabe</span> {filename} <span class="co"># like edit but open buffer in new tab</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>C-w<span class="op">&gt;</span>T <span class="co"># break the window pane into a new tab</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">:tabc</span> <span class="co"># close current tab</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">:tabo</span> <span class="co"># close other tabs</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">:tabn</span> or gt <span class="co"># next tab</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">:tabp</span> or gT <span class="co"># prev tab</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">:tabmove</span> {N} <span class="co"># move the Nth tab to beginning</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="files" class="level3">
+<h3 class="anchored" data-anchor-id="files">Files</h3>
+<p>I also learned about how to open files to buffers quicker rather than typing out full paths.<br>
+I already had discovered the <code>%</code> in command mode which represents the current buffer’s filepath.<br>
+Combine it into <code>: %:h</code> and press <tab> and the full path to the current buffer is completed for you.<br>
+This is handy for when you opened Vim at the root project dir but are opening files nested a few folders down.<br>
+If you already have one open, instead of typing out path from root, you can type the path out relative to the current folder.</tab></p>
+</section>
+</section>
+<section id="godot" class="level2">
+<h2 class="anchored" data-anchor-id="godot">Godot</h2>
+<p>Added a healthbar UI element to the spaceship health pickup scene.<br>
+Use a <code>Control</code> node with <code>ProgressBar</code> node nested.<br>
+Go into the control section of the inspector tab to change colors via theme overrides (or theme if one is made).<br>
+Note though that since these nodes are nested under a parent node that rotates, the bar will also rotate with this ship.<br>
+To prevent this, use <code>get_node("Sprite2D")</code> or <code>$Sprite2D</code> to access the rotation property of the ship directly.<br>
+I think this might be a problem though if the root scene node for the ship was not an Area2D with collision shape circle.<br>
+If the shape was anything else, rotating the Sprite without the collision shape would cause a desync in hitboxes relative to the visual sprite.<br>
+Could use the same <code>get_node</code> idea to also rotate the collision shape but maybe there is a cleaner way.</p>
+<p><img src="./ship-with-hbar.png" width="30%"></p>
+<p>Thanks for reading!</p>
+<p><img src="https://media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif" style="width:100%"></p>
 
 
 </section>
