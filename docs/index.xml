@@ -10,7 +10,116 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 13 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 14 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 12</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/14-devlog-day13/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="how-it-started" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-started">How it started</h2>
+<p>Maybe a year or two ago, I jotted an idea down for a portable workstation down in my digital notebook (Obsidian with Syncthing for the curious).<br>
+Isn’t that just a laptop you may wonder?<br>
+Pretty much except with all of the parts more modular, and I am not talking like Framework laptops.<br>
+I mean, take a mini PC, a portable monitor (with VESA compatibilty), a lightweight VESA mount, a keyboard, a mouse, and optionally although not really, a battery.<br>
+Why though?</p>
+<ol type="1">
+<li>Laptop monitors being tethered to keyboards and touchpads is not great for your shoulders and neck<br>
+</li>
+<li>Each part is swappable. There are many options for each component that goes into it<br>
+</li>
+<li>Mini PCs are cheaper than many laptops for equal specs<br>
+</li>
+<li>Fun project</li>
+</ol>
+<p>I had all the parts sorted, from the <a href="https://www.bee-link.com/products/beelink-ser5-max-5800h">Beelink SER5 mini PC</a> to the <a href="https://hhkeyboard.us/hhkb/pro-classic">HHKB Pro classic mech keyboard</a> to the <a href="https://www.kensington.com/p/products/electronic-control-solutions/trackball-products/slimblade-pro-trackball/">Kensington Trackball mouse</a> along with some shitty cheap LCD monitor.<br>
+I picked out one cheap 1 monitor VESA mount to try which worked great.<br>
+I got a second one that could hold two monitors that needed some effort to mod to fit in my backpack.<br>
+Unfortunately I stripped a few of the bolts so that part is on hold, but the one monitor stand works fine.</p>
+<p>I then neeed to pick out a battery.<br>
+I saw some interesting multi-device battery pack that advertized 250 W, 230 Wh with an AC outlet and a few USB-C ports.<br>
+Seemed a little overkill but would do the job.</p>
+</section>
+<section id="failure" class="level2">
+<h2 class="anchored" data-anchor-id="failure">Failure</h2>
+<p>I put all the pieces together, testing the battery powering all the devices.<br>
+After preparing my USB with a Linux distro (Arch btw), I started going through the installation procedure.<br>
+A few minutes in, the mini PC powered down randomly.<br>
+I noticed the USB-C powering the monitor was significantly chewed up by one of the cats so I replaced it and tried again.<br>
+I got a lot further this time but about 20 minutes in, the PC crashed again.<br>
+I was out of time for some plans with friends but I could not help wondering what was going wrong.</p>
+<p>When I got back home I checked the specs of the battery pack on the device.<br>
+For the AC outlet, which the mini PC power adapter was plugged into, the specs read “120V ~0.83 A” meaning 110 Volts and 0.83 Amps.<br>
+I compared that to the specs on the power adapter which read “AC input, 100-240V 1.5A”.<br>
+So I was pretty sure something was off there.</p>
+<p>I have not dealt with electriconics physics in a while so I had to some web searching.<br>
+Turns out, as I relearned, power (Watts) is <code>volts * amps</code>.<br>
+Watts is the unit measurement of power for electrical devices.<br>
+Then Watt hours, or Wh, is the power used (or provided by a battery) in an hour.</p>
+<p>Back to the battery, with our equation <code>power = volts * amps</code>, <code>110 V * .83 A</code> is 100 Watts.<br>
+That is a lot less than the advertized 250 W I saw before.<br>
+I went back to the web page and noticed that lower down there was a bullet that read <code>charges a laptop 3 times, 100 W max fast charging</code>.<br>
+100 W max fast charging?<br>
+I realized they must have meant each port was only capable of 100 W max and that 250 Watts was the total power capacity of the battery.<br>
+The vendor definetly could make the description more clear.<br>
+I setup a return for that battery pack and started looking for a new one.</p>
+</section>
+<section id="quest-for-the-battery" class="level2">
+<h2 class="anchored" data-anchor-id="quest-for-the-battery">Quest for the battery</h2>
+<p>I did some math this time around.<br>
+On the specs of the mini PC, I saw that it takes 19V DC at 3.7A.<br>
+That is 65 Watts max.<br>
+The monitor takes 5V 2A or 10 Watts which can be lowered further by dropping the frame rate, resolution, and brightness.<br>
+The other peripherals like mouse and keyboard would add maybe another 5 watts max.</p>
+<p>At highest power consumption, 65 + 10 + 5 = <strong>80</strong> watts for the workstation.<br>
+Realistically if I was only programming with limited web browsing on a lightweight distro like Arch with XFCE, this would probably be closer to 50W.<br>
+I estimated that at a coffee shop I would want at least 2 hours of battery power before needing to find an outlet to be reasonable.<br>
+Therefore, I needed 50W * 2h = 100 Wh battery with 19V and &gt;3.7A DC output and &gt;80 Watts max.</p>
+<p>Found a couple that met those specs and included barrel connector adapters to plug into the mini PC DC in.<br>
+The one I chose ended up specifying mAh (miliAmp hours) rather than Watts so I had to convert.<br>
+Lithium Ion batteries have an internal voltage of 3.7V.<br>
+Wh = 3.7 * I mAh / 1000.<br>
+The battery advertized 50000 mAh so 3.7 * 50000 / 1000 = 185 wH.<br>
+Worst case that gives me 2 hours of charge, average case more like 3.5 hours.<br>
+Not too shaby.<br>
+Bonus was that it only 2 lbs compared to the other one which was 5+ lbs and much larger.</p>
+<p>Unforseen con of all of this is that none of these batteries are allowed on planes.</p>
+</section>
+<section id="thing-i-relearned" class="level2">
+<h2 class="anchored" data-anchor-id="thing-i-relearned">Thing I (re)learned</h2>
+<ul>
+<li><code>Power (Watts) = Volts (V) * Current (Amps)</code><br>
+</li>
+<li>Wh = Watt hours = Watts * hours<br>
+</li>
+<li>You need to make sure that batteries are capable of delivering enough watts for all the devices they are powering (sounds obvious but not relevant in most daily life as a programmer)<br>
+</li>
+<li>Laptop batteries are crazy efficient for their size and safety compatibility<br>
+</li>
+<li>Lithium Ion batteries operate at 3.7V<br>
+</li>
+<li>Batteries need to be low Wh and watts to get on planes<br>
+</li>
+<li>Buying a mini PC with a USB-C cable or 12V DC in would have been smarter for battery options<br>
+</li>
+<li>When things go wrong, do some research</li>
+</ul>
+<p>This ended up taking me 3 hours today so no update on gamedev or Vim.</p>
+<p>Thanks for reading!</p>
+<p><img src="https://evanlesmez.com/posts/14-devlog-day13/https:/external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ffd%2Ff7%2F46%2Ffdf746569de435d87da6c1e70c3585fc.gif" width="50%"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>electronics</category>
+  <guid>https://evanlesmez.com/posts/14-devlog-day13/index.html</guid>
+  <pubDate>Wed, 14 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 12</title>
   <dc:creator>Evan Lesmez</dc:creator>

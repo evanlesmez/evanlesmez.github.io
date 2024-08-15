@@ -1,0 +1,95 @@
+---
+title: "Devlog Day 12"
+description: "Endeavors in a puting together a portable mini PC workstation" 
+author: "Evan Lesmez"
+date: "2024-08-14"
+categories:
+  - electronics
+---
+## How it started
+Maybe a year or two ago, I jotted an idea down for a portable workstation down in my digital notebook (Obsidian with Syncthing for the curious).   
+Isn't that just a laptop you may wonder?  
+Pretty much except with all of the parts more modular, and I am not talking like Framework laptops.  
+I mean, take a mini PC, a portable monitor (with VESA compatibilty), a lightweight VESA mount, a keyboard, a mouse, and optionally although not really, a battery.  
+Why though?  
+
+1. Laptop monitors being tethered to keyboards and touchpads is not great for your shoulders and neck  
+2. Each part is swappable. There are many options for each component that goes into it  
+3. Mini PCs are cheaper than many laptops for equal specs  
+4. Fun project  
+
+I had all the parts sorted, from the [Beelink SER5 mini PC](https://www.bee-link.com/products/beelink-ser5-max-5800h) to the [HHKB Pro classic mech keyboard](https://hhkeyboard.us/hhkb/pro-classic) to the [Kensington Trackball mouse](https://www.kensington.com/p/products/electronic-control-solutions/trackball-products/slimblade-pro-trackball/) along with some shitty cheap LCD monitor.  
+I picked out one cheap 1 monitor VESA mount to try which worked great.  
+I got a second one that could hold two monitors that needed some effort to mod to fit in my backpack.  
+Unfortunately I stripped a few of the bolts so that part is on hold, but the one monitor stand works fine.  
+
+I then neeed to pick out a battery.  
+I saw some interesting multi-device battery pack that advertized 250 W, 230 Wh with an AC outlet and a few USB-C ports.  
+Seemed a little overkill but would do the job.  
+
+## Failure
+I put all the pieces together, testing the battery powering all the devices.  
+After preparing my USB with a Linux distro (Arch btw), I started going through the installation procedure.  
+A few minutes in, the mini PC powered down randomly.  
+I noticed the USB-C powering the monitor was significantly chewed up by one of the cats so I replaced it and tried again.  
+I got a lot further this time but about 20 minutes in, the PC crashed again.  
+I was out of time for some plans with friends but I could not help wondering what was going wrong.  
+
+When I got back home I checked the specs of the battery pack on the device.  
+For the AC outlet, which the mini PC power adapter was plugged into, the specs read "120V ~0.83 A" meaning 110 Volts and 0.83 Amps.  
+I compared that to the specs on the power adapter which read "AC input, 100-240V 1.5A".  
+So I was pretty sure something was off there.  
+
+I have not dealt with electriconics physics in a while so I had to some web searching.  
+Turns out, as I relearned, power (Watts) is `volts * amps`.   
+Watts is the unit measurement of power for electrical devices.  
+Then Watt hours, or Wh, is the power used (or provided by a battery) in an hour.  
+
+Back to the battery, with our equation `power = volts * amps`, `110 V * .83 A` is 100 Watts.  
+That is a lot less than the advertized 250 W I saw before.  
+I went back to the web page and noticed that lower down there was a bullet that read `charges a laptop 3 times, 100 W max fast charging`.  
+100 W max fast charging?   
+I realized they must have meant each port was only capable of 100 W max and that 250 Watts was the total power capacity of the battery.  
+The vendor definetly could make the description more clear.  
+I setup a return for that battery pack and started looking for a new one.  
+
+## Quest for the battery 
+I did some math this time around.  
+On the specs of the mini PC, I saw that it takes 19V DC at 3.7A.  
+That is 65 Watts max.  
+The monitor takes 5V 2A or 10 Watts which can be lowered further by dropping the frame rate, resolution, and brightness.  
+The other peripherals like mouse and keyboard would add maybe another 5 watts max.  
+
+At highest power consumption, 65 + 10 + 5 = **80** watts for the workstation.  
+Realistically if I was only programming with limited web browsing on a lightweight distro like Arch with XFCE, this would probably be closer to 50W.  
+I estimated that at a coffee shop I would want at least 2 hours of battery power before needing to find an outlet to be reasonable.  
+Therefore, I needed 50W * 2h = 100 Wh battery with 19V and >3.7A DC output and >80 Watts max.   
+
+Found a couple that met those specs and included barrel connector adapters to plug into the mini PC DC in.    
+The one I chose ended up specifying mAh (miliAmp hours) rather than Watts so I had to convert.  
+Lithium Ion batteries have an internal voltage of 3.7V.  
+Wh = 3.7 * I mAh / 1000.  
+The battery advertized 50000 mAh so 3.7 * 50000 / 1000 = 185 wH.  
+Worst case that gives me 2 hours of charge, average case more like 3.5 hours.  
+Not too shaby.  
+Bonus was that it only 2 lbs compared to the other one which was 5+ lbs and much larger.  
+
+Unforseen con of all of this is that none of these batteries are allowed on planes.  
+
+## Thing I (re)learned
+- `Power (Watts) = Volts (V) * Current (Amps)`   
+- Wh = Watt hours = Watts * hours  
+- You need to make sure that batteries are capable of delivering enough watts for all the devices they are powering (sounds obvious but not relevant in most daily life as a programmer)   
+- Laptop batteries are crazy efficient for their size and safety compatibility  
+- Lithium Ion batteries operate at 3.7V  
+- Batteries need to be low Wh and watts to get on planes  
+- Buying a mini PC with a USB-C cable or 12V DC in would have been smarter for battery options  
+- When things go wrong, do some research  
+
+This ended up taking me 3 hours today so no update on gamedev or Vim.  
+
+Thanks for reading!  
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ffd%2Ff7%2F46%2Ffdf746569de435d87da6c1e70c3585fc.gif" width="50%">
+
+
