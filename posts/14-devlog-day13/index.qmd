@@ -1,6 +1,6 @@
 ---
 title: "Devlog Day 12"
-description: "Endeavors in a puting together a portable mini PC workstation" 
+description: "Endeavors in puting together a portable mini PC workstation" 
 author: "Evan Lesmez"
 date: "2024-08-14"
 categories:
