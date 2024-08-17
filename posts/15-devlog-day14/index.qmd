@@ -1,0 +1,9 @@
+---
+title: "Devlog Day 12"
+description: "Endeavors in puting together a portable mini PC workstation" 
+author: "Evan Lesmez"
+date: "2024-08-15"
+categories:
+  - electronics
+---
+Puting the computer together first pic 
