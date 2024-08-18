@@ -1,9 +1,29 @@
 ---
-title: "Devlog Day 12"
-description: "Endeavors in puting together a portable mini PC workstation" 
+title: "Devlog Day 15: mini PC workstation endeavors with i3"
+description: "Setup i3 for the first time ever" 
 author: "Evan Lesmez"
-date: "2024-08-14"
+date: "2024-08-16"
 categories:
   - electronics
+  - linux
 ---
-# i3 archlinux setup pic
+I have always wanted to tinker around with the i3 tiling window manager.  
+Recently I started using Pop_OS! tiling feature, and installed `komorebi` on my Windows gaming machine to replicate.  
+In doing so, I realized tiling feels way nicer than the default stacking behavior common to most display managers.  
+
+So I took the plunge in setting up i3 and love it!  
+
+<img src="./arch-i3-ser5.png" style="width:100%">
+
+
+The keybindings are nice and configurable.  
+I changed my mod key to be the Win key.  
+`Win+<CR>` creates a new terminal.  
+`Win+[h,j,k,l]` goes to the window on the screen in that direction (vim motions).  
+`Win+d` opens dmenu to choose a program. Critical.  
+`Win+{N}` goes to workspace N. Incredibly handy.  
+`Win+Shift+{N}` moves window to workspace N. Also incredibly handy starting out.  
+`Win+Shift+q` close window.  
+There are so many more but even with these it feels so comfortable.  
+
+Note to get a nice background I used `feh` and to add opacity I used `picom` as a compositor.  

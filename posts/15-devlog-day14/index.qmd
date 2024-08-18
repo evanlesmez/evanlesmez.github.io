@@ -1,9 +1,15 @@
 ---
-title: "Devlog Day 12"
-description: "Endeavors in puting together a portable mini PC workstation" 
+title: "Devlog Day 14: the new mini PC battery worked!"
+description: "tried out the new battery" 
 author: "Evan Lesmez"
 date: "2024-08-15"
 categories:
   - electronics
+  - mini pc
 ---
-Puting the computer together first pic 
+
+It worked!  
+I put the new battery in place, put it into the 20V (19V compatible) DC output mode, and then with a barrel adapter, connected the the DC out of the battery to the mini PC.  
+I then went through the process of installing a Linux OS and setting up some programs which ended up taking a few hours.  
+
+<img src="./mini-pc-workstation-v1.jpg" style="width:100%" alt="mini PC workstation version 1.0.0">

@@ -1,10 +1,11 @@
 ---
-title: "Devlog Day 12"
+title: "Devlog Day 13"
 description: "Endeavors in puting together a portable mini PC workstation" 
 author: "Evan Lesmez"
 date: "2024-08-14"
 categories:
   - electronics
+  - mini pc
 ---
 ## How it started
 Maybe a year or two ago, I jotted an idea down for a portable workstation down in my digital notebook (Obsidian with Syncthing for the curious).   

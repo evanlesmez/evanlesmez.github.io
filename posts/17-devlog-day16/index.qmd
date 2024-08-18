@@ -1,22 +1,65 @@
 ---
-title: "Devlog Day 12"
-description: "Endeavors in puting together a portable mini PC workstation" 
+title: "Devlog Day 16: Vim windows, IGDA meetups, and Godot looting"
+description: "Some Vim, indie game dev meetups and Godot looting" 
 author: "Evan Lesmez"
-date: "2024-08-14"
+date: "2024-08-17"
 categories:
   - vim 
-  - igda
+  - gamedev
   - godot
 ---
-Meetups
-  - first meetup
-  - work session
-  - social pressure
-Vim
-  - :find
-  - :set path+={p}/**
-  - netrw :E :Se :Ve
-  - :e.
-  - :source .vimrc different form :! source .vimrc
-  - :!mkdir -p %:h create folders and file needed to match buffer path
-  - :w !sudo tee % > /dev/null shorcut to sudo write higher permission files
+## IGDA DC
+First off, I forgot to mention in the last few posts that I attended an indie game dev meetup.  
+On last tuesday I met up with ~10 indie game dev/designers as organized by the DC chapter of the International Game Developer's Association or [IGDA DC](https://www.igdadc.org/)  
+It was motivating to see the games people were working on and hear what types of games people liked and wanted to create.  
+
+There was a working session today that I also attended to put a few hours into gamedev and share our progress updates together.  
+There were 7 of us there and I was definetly the newest to gamedev.  
+The mini PC workstation was definetly a conversation starter.  
+
+## Vim
+Before I went to the IGDA meetup, I got back on the Vim train.  
+Learned about a few commands.  
+```sh
+:find # like shell find but in Vim environment
+:set path+={path}/** # changes the path that :find will search through for matches
+
+# netrw commands 
+:E or :e. # explore the Vim file tree of the cwd
+:Se # split explore the file tree
+:Ve # vertical split explore file treek
+
+:source .vimrc # different from :! souce .vimrc which will have errors becuase .vimrc is not a compatible shell syntax
+
+:!mkdir -p %:h # create folders and file needed to match buffer path
+
+:w !sudo tee % > /dev/null # shorcut to sudo write higher permission files
+```
+
+## Godot looting
+In Godot I added some gem looting mechanics.  
+Learned how to use node groups to handle `area_entered` signals seperately for different nodes like gems vs. health packs.  
+Also learned how to update the UI for a label via the `text` property.  
+For progress bar it was `value`.  
+So a common pattern for colliding objects seems to be:  
+
+```sh
+Area2D
+    - area_entered signal
+  CollisionShape2D
+      - shape
+  Sprite2D
+      - texture
+Control (UI)
+  Element Node 
+     - value or text
+```
+In the `_ready` method of the parent node, usually Area2D, the `area_entered` signal is connected to a callback.  
+The arg passed to the callback, or the `area_that_entered` can have a configured group to check `is_in_group('group_name')`.  
+If the area that entered should cause an update, the corresponding attribute like health or gems should update, and consequentally trigger an update the attribute in the UI that displays that value.  
+
+<img src="./ship-gem-loots.gif" width="100%">
+
+Thanks for reading!  
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F78.media.tumblr.com%2Fbecf220160e6cd331557507ae12f411d%2Ftumblr_mga36uGNoJ1s2r6dwo1_500.gif" width="50%">

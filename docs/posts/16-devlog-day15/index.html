@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Evan Lesmez">
-<meta name="dcterms.date" content="2024-08-11">
-<meta name="description" content="Vim window management and Godot Area2D physics">
+<meta name="dcterms.date" content="2024-08-16">
+<meta name="description" content="Setup i3 for the first time ever">
 
-<title>Devlog Day 10 – Evan Lesmez</title>
+<title>Devlog Day 15: mini PC workstation endeavors with i3 – Evan Lesmez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,16 +125,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Devlog Day 10</h1>
+      <h1 class="title">Devlog Day 15: mini PC workstation endeavors with i3</h1>
                   <div>
         <div class="description">
-          Vim window management and Godot Area2D physics
+          Setup i3 for the first time ever
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">vim</div>
-                <div class="quarto-category">gamedev</div>
-                <div class="quarto-category">godot</div>
+                <div class="quarto-category">electronics</div>
+                <div class="quarto-category">linux</div>
               </div>
                   </div>
   </div>
@@ -186,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 11, 2024</p>
+        <p class="date">August 16, 2024</p>
       </div>
     </div>
     
@@ -205,57 +170,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="vim-windows" class="level2">
-<h2 class="anchored" data-anchor-id="vim-windows">Vim windows</h2>
-<p>Today I learned about splitting and managing windows in Vim.<br>
-I had some experience with this before but it was a good refresher.<br>
-My problem is that I sometimes get mixed up with tmux cmds and Vim ones.<br>
-In tmux, Ctrl-B is the beginning of commands.<br>
-In Vim, Ctrl-W is the beginning of window commands.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span>s <span class="co"># split window intro rows</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span>v <span class="co"># split window vertically into columns</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">:sp</span> {file} <span class="co"># split rows loading file into new window</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">:vsp</span> {file} <span class="co"># split cols loading file into new window</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span>w <span class="ex">or</span> <span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span> <span class="co"># cycle between windows</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># you can also ctrl-w into any hjkl move</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">:clo</span> <span class="co"># close active window but use :q its easier or &lt;Ctrl-w&gt;c</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">:on[ly]</span> or <span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span>o <span class="co"># close all other windows except current</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span>= <span class="co"># equalize the dimensions of all windows</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span>_ <span class="co"># max the current window height</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;|</span> <span class="co"># max the current window width</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Moving windows</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span>r <span class="ex">or</span> R <span class="co"># rotates the windows for viewing</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span>x <span class="co"># swap neighbor window for current</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Ctrl-w<span class="op">&gt;</span><span class="ex">[hjkl]</span> <span class="co"># bring window to the top of that direction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The moving section came from this <a href="http://vimcasts.org/episodes/working-with-windows/">vimcast on Vim windows</a>.</p>
-</section>
-<section id="godot-area2d-collision-physics" class="level2">
-<h2 class="anchored" data-anchor-id="godot-area2d-collision-physics">Godot Area2D Collision physics</h2>
-<p>So in previous lessons, I only had tinkered with the <code>Sprite2D</code> node which is for visuals and animations.<br>
-However, to get some real physics going between objects, like a collision, <code>Area2D</code> is the node for the job.<br>
-It needs a <code>CollisionObject2D</code> as a child node which in turn needs a shape to use.<br>
-With those nodes setup, the Area2D signal <code>area_entered</code> may be connected to respond to when another Area2D node collides with this one.<br>
-<code>area_entered.connect</code> can be used in the attached script instead of using the signal editor.<br>
-It is common to place it in the <code>_ready()</code> function which is what loads the node in the node tree kind of like <code>__init__</code> or <code>constructor</code> for a class in OOP.<br>
-The convention for the callback to connect is to name it <code>_on_area_entered</code> implying it is a private method for this node and that it is connected to that signal name.<br>
-That pattern will be reused for other signals.</p>
-<p>The callback for the case of loot being picked up by a player will likely cause the node to disappear, which means we will use <code>queue_free</code>.<br>
-<code>queue_free</code> means to queue up freeing the memory allocated to the node so it will deleted.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>func _ready():</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  area_entered.<span class="ex">connect</span>(_on_area_entered)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>func _on_area_entered(area_that_entered: Area2D):</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  queue_free()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>That pattern all together is used in scenes like this:<br>
-<img src="./area2d-collisions.gif" height="500px"></p>
-<p>Thank for reading.<br>
-<img src="https://media.tenor.com/Cvwzv7Dy6DUAAAAC/edward-cowboy-bebop.gif"></p>
+<p>I have always wanted to tinker around with the i3 tiling window manager.<br>
+Recently I started using Pop_OS! tiling feature, and installed <code>komorebi</code> on my Windows gaming machine to replicate.<br>
+In doing so, I realized tiling feels way nicer than the default stacking behavior common to most display managers.</p>
+<p>So I took the plunge in setting up i3 and love it!</p>
+<p><img src="./arch-i3-ser5.png" style="width:100%"></p>
+<p>The keybindings are nice and configurable.<br>
+I changed my mod key to be the Win key.<br>
+<code>Win+&lt;CR&gt;</code> creates a new terminal.<br>
+<code>Win+[h,j,k,l]</code> goes to the window on the screen in that direction (vim motions).<br>
+<code>Win+d</code> opens dmenu to choose a program. Critical.<br>
+<code>Win+{N}</code> goes to workspace N. Incredibly handy.<br>
+<code>Win+Shift+{N}</code> moves window to workspace N. Also incredibly handy starting out.<br>
+<code>Win+Shift+q</code> close window.<br>
+There are so many more but even with these it feels so comfortable.</p>
+<p>Note to get a nice background I used <code>feh</code> and to add opacity I used <code>picom</code> as a compositor.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
