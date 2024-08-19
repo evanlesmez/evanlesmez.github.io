@@ -1,5 +1,4 @@
 jupyterlab
-jupyterlab-quarto
 pillow
 pythreejs
 plotly

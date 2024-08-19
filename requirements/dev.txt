@@ -7,4 +7,5 @@ jupyterlab-drawio
 jupyter-fs
 jupyterlab-spellchecker
 jupyterlab-git
+jupyterlab-quarto
 # 'python-lsp-server[all]'

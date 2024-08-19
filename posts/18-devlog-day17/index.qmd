@@ -1,0 +1,41 @@
+---
+title: "Devlog Day 17: Godot random items"
+description: "Godot looting continued"
+author: "Evan Lesmez"
+date: "2024-08-18"
+categories:
+  - gamedev
+  - godot
+---
+## Godot looting
+Got a little further today.  
+Repeated setting up the Area2D pattern for handling the on_area_entered signal.  
+The next step in the project was to randomly generate loot.  
+This required a base Node2D with a child Timer node.  
+The timer node was needed to emit `timeout` signals at regular intervals to trigger item spawns.  
+`get_node("Timer").timeout.connect(_on_timer_timeout)`  
+
+Then to handle the timeout:  
+
+```py
+func _on_timer_timeout() -> void:
+	var random_item_scene: PackedScene = item_scenes.pick_random()
+    var item_instance := random_item_scene.instantiate()
+	add_child(item_instance)
+```
+
+It looks a little goofy since I still haven't removed the hardcoded behavior of `queue_free` on area entered for items.  
+
+<img src="./loot-random.gif" alt="Alternating gem and health pack spawning and destroying each other" style="width:50%">
+
+
+Random aside, `faillock` is handy for when you mess up your sudo password a few times in a row and got locked out.  
+
+```sh
+faillock --user {user-who-inted-away-password-attemps} # list your failed attemps
+faillock --user {user-who-trolled} --reset # resets your lock so you can try again
+```
+
+Thanks for reading!  
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F78.media.tumblr.com%2Fbecf220160e6cd331557507ae12f411d%2Ftumblr_mga36uGNoJ1s2r6dwo1_500.gif" style="width:50%">

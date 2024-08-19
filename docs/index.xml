@@ -10,7 +10,67 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.5.56</generator>
-<lastBuildDate>Sat, 17 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 18 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 17: Godot random items</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/18-devlog-day17/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="godot-looting" class="level2">
+<h2 class="anchored" data-anchor-id="godot-looting">Godot looting</h2>
+<p>Got a little further today.<br>
+Repeated setting up the Area2D pattern for handling the on_area_entered signal.<br>
+The next step in the project was to randomly generate loot.<br>
+This required a base Node2D with a child Timer node.<br>
+The timer node was needed to emit <code>timeout</code> signals at regular intervals to trigger item spawns.<br>
+<code>get_node("Timer").timeout.connect(_on_timer_timeout)</code></p>
+<p>Then to handle the timeout:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb1-1">func _on_timer_timeout() <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> void:</span>
+<span id="cb1-2">    var random_item_scene: PackedScene <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> item_scenes.pick_random()</span>
+<span id="cb1-3">    var item_instance <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:=</span> random_item_scene.instantiate()</span>
+<span id="cb1-4">    add_child(item_instance)</span></code></pre></div>
+<p>It looks a little goofy since I still haven’t removed the hardcoded behavior of <code>queue_free</code> on area entered for items.</p>
+<p><img src="https://evanlesmez.com/posts/18-devlog-day17/loot-random.gif" alt="Alternating gem and health pack spawning and destroying each other" style="width:50%"></p>
+<p>Random aside, <code>faillock</code> is handy for when you mess up your sudo password a few times in a row and got locked out.</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">faillock</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--user</span> {user-who-inted-away-password-attemps} <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># list your failed attemps</span></span>
+<span id="cb2-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">faillock</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--user</span> {user-who-trolled} <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--reset</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># resets your lock so you can try again</span></span></code></pre></div>
+<p>Thanks for reading!</p>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F78.media.tumblr.com%2Fbecf220160e6cd331557507ae12f411d%2Ftumblr_mga36uGNoJ1s2r6dwo1_500.gif" style="width:50%"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>gamedev</category>
+  <category>godot</category>
+  <guid>https://evanlesmez.com/posts/18-devlog-day17/</guid>
+  <pubDate>Sun, 18 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 16: Vim windows, IGDA meetups, and Godot looting</title>
   <dc:creator>Evan Lesmez</dc:creator>
