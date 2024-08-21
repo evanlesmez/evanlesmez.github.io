@@ -1,0 +1,67 @@
+---
+title: "Devlog Day 17: Encrypted root FS and Godot random item positions"
+description: "Discussing Linux encryption and Godot looting continued"
+author: "Evan Lesmez"
+date: "2024-08-20"
+categories:
+  - gamedev
+  - godot
+  - encryption 
+---
+## Root filesystem encryption
+Earlier today I was thinking about encrypting an external SSD to store some files.  
+I started doing some research and one big question popped up in my head.  
+If someone stole my computer, and live-booted the SSD with a USB, what could they take?  
+Doing some more digging, I realized they could change my root password and find my current user password in plain-text.  
+They could then boot up the PC, login, not only see all my files, but they would also gain access to my email, and access to online accounts that I am currently logged into.  
+That seems pretty terrible.  
+
+Now most people don't suck and would not steal your computer.  
+And out of the people who do suck, most are not that tech savy.  
+However, in the small chance where someone really wants to screw you over and steal a lot of your shit, it is better to be prepared.  
+
+So I spent 3 hours learning and encrypting my root filesystem.  
+I just went for it with 0 backups of all the configuration I had done to get archlinux setup with i3, feh, picom, alacritty...  
+Kinda silly but I figured it would be good practice to have to do it again from scratch if I messed up.  
+
+Most of the documentation I followed was [on dm_crypt](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system) in the "Encrypting and unencryped file system".  
+I had to:  
+1. resize the file system to make room for the 32MB LUKS header  
+2. `crypsetup reencrypt` to encrypt the filesystem which took about an hour  
+3. `cryptsetup open` the file system partition to a `/dev/mapper/{mapped-name}` to decrypt it (using a key or passphrase)  
+4. `resize2fs` to fill up the extra space I dropped for the LUKS header  
+5. remount the decrypted filesystem  and boot  
+6. arch-chroot into the mounted filesystem  
+7. use `blkid` to find the ids of the decrypted and encrypted devices  
+8. update the `mkinitcpio.conf` to include `encrypt` in the initramfs so early userspace has the tools ready to decrypt the file system partition  
+9. add kernel params to the GRUB bootloader config that specify the UUID of the device that is encrypted and what to map it to.  
+10. regenerate GRUB mkconfig on mounted `/boot`  
+11. update fstab for the new UUID of the decrypted FS  
+
+It was a lot.  
+I double checked the configs for UUIDs, dname and everything and rebooted and it all worked!  
+
+If you are reading this, encrypting your drive is probably way easier and can be done with a GUI.  
+Also, you should probably encrypt your drive.  
+
+## Godot random item positions
+
+<img src="./ship-loots-position-rand-items.gif" style="width:100%">
+
+The coins and health packs now spawn at random points.  
+The process is to first store the `preload` item scenes in an array.  
+`array.pick_random` to choose one at random.  
+`add_child(rand_item)` to add the scene to the scene tree dynamically.  
+`get_viewport_rect` will get use the size and position of viewport.  
+We want the `size` Vector2D.  
+Then some more randomness.  
+`item_inst.position.x = randf_range(0, viewport.size.x)` and same for y.  
+
+And there you go, a random item will be spawned at a random point in the viewport.  
+
+
+Thanks for reading!  
+
+<img
+src="https://media.giphy.com/media/8hXlcywWOFiJW/giphy.gif"
+style="width:50%">
