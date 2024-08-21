@@ -1,5 +1,5 @@
 ---
-title: "Devlog Day 17: Encrypted root FS and Godot random item positions"
+title: "Devlog Day 18: Encrypted root FS and Godot random item positions"
 description: "Discussing Linux encryption and Godot looting continued"
 author: "Evan Lesmez"
 date: "2024-08-20"
