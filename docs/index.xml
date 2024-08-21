@@ -10,7 +10,74 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.5.56</generator>
-<lastBuildDate>Sun, 18 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 20 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog Day 17: Encrypted root FS and Godot random item positions</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/19-devlog-day18/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="root-filesystem-encryption" class="level2">
+<h2 class="anchored" data-anchor-id="root-filesystem-encryption">Root filesystem encryption</h2>
+<p>Earlier today I was thinking about encrypting an external SSD to store some files.<br>
+I started doing some research and one big question popped up in my head.<br>
+If someone stole my computer, and live-booted the SSD with a USB, what could they take?<br>
+Doing some more digging, I realized they could change my root password and find my current user password in plain-text.<br>
+They could then boot up the PC, login, not only see all my files, but they would also gain access to my email, and access to online accounts that I am currently logged into.<br>
+That seems pretty terrible.</p>
+<p>Now most people don’t suck and would not steal your computer.<br>
+And out of the people who do suck, most are not that tech savy.<br>
+However, in the small chance where someone really wants to screw you over and steal a lot of your shit, it is better to be prepared.</p>
+<p>So I spent 3 hours learning and encrypting my root filesystem.<br>
+I just went for it with 0 backups of all the configuration I had done to get archlinux setup with i3, feh, picom, alacritty…<br>
+Kinda silly but I figured it would be good practice to have to do it again from scratch if I messed up.</p>
+<p>Most of the documentation I followed was <a href="https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system">on dm_crypt</a> in the “Encrypting and unencryped file system”.<br>
+I had to:<br>
+1. resize the file system to make room for the 32MB LUKS header<br>
+2. <code>crypsetup reencrypt</code> to encrypt the filesystem which took about an hour<br>
+3. <code>cryptsetup open</code> the file system partition to a <code>/dev/mapper/{mapped-name}</code> to decrypt it (using a key or passphrase)<br>
+4. <code>resize2fs</code> to fill up the extra space I dropped for the LUKS header<br>
+5. remount the decrypted filesystem and boot<br>
+6. arch-chroot into the mounted filesystem<br>
+7. use <code>blkid</code> to find the ids of the decrypted and encrypted devices<br>
+8. update the <code>mkinitcpio.conf</code> to include <code>encrypt</code> in the initramfs so early userspace has the tools ready to decrypt the file system partition<br>
+9. add kernel params to the GRUB bootloader config that specify the UUID of the device that is encrypted and what to map it to.<br>
+10. regenerate GRUB mkconfig on mounted <code>/boot</code><br>
+11. update fstab for the new UUID of the decrypted FS</p>
+<p>It was a lot.<br>
+I double checked the configs for UUIDs, dname and everything and rebooted and it all worked!</p>
+<p>If you are reading this, encrypting your drive is probably way easier and can be done with a GUI.<br>
+Also, you should probably encrypt your drive.</p>
+</section>
+<section id="godot-random-item-positions" class="level2">
+<h2 class="anchored" data-anchor-id="godot-random-item-positions">Godot random item positions</h2>
+<p><img src="https://evanlesmez.com/posts/19-devlog-day18/ship-loots-position-rand-items.gif" style="width:100%"></p>
+<p>The coins and health packs now spawn at random points.<br>
+The process is to first store the <code>preload</code> item scenes in an array.<br>
+<code>array.pick_random</code> to choose one at random.<br>
+<code>add_child(rand_item)</code> to add the scene to the scene tree dynamically.<br>
+<code>get_viewport_rect</code> will get use the size and position of viewport.<br>
+We want the <code>size</code> Vector2D.<br>
+Then some more randomness.<br>
+<code>item_inst.position.x = randf_range(0, viewport.size.x)</code> and same for y.</p>
+<p>And there you go, a random item will be spawned at a random point in the viewport.</p>
+<p>Thanks for reading!</p>
+<p><img src="https://media.giphy.com/media/8hXlcywWOFiJW/giphy.gif" style="width:50%"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>gamedev</category>
+  <category>godot</category>
+  <category>encryption</category>
+  <guid>https://evanlesmez.com/posts/19-devlog-day18/</guid>
+  <pubDate>Tue, 20 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 17: Godot random items</title>
   <dc:creator>Evan Lesmez</dc:creator>
