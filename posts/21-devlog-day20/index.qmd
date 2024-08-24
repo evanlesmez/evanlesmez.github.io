@@ -1,0 +1,29 @@
+---
+title: "Devlog day 20: first game jam begins"
+description: 'The "sizzle" DC game jam starts today running for a week'
+author: "Evan Lesmez"
+date: "2024-08-23"
+categories:
+  - gamedev
+  - gamejam
+---
+
+I am traveling right now so did not have much time to progress on lessons.  
+I checked the theme for the DC game jam when it came out <https://itch.io/jam/district-jam-5>.  
+Did some brainstorming with friends and on my own.  
+Also figured out how to launch nvim as script editor from with Godot on creating/edit scripts.  
+Lastly came up with a plan:  
+
+1. Figure out git in Godot editor
+2. Pureref vision board of characers like calcifer and charmander ...
+3. Inkscape make some rough drawings on inkscape of the main character
+4. Hand draw some ideas for the background abd stage
+5. Get Erica involved with some sound and music ideas based on the setting
+6. Sprite movement
+7. Practice export game build
+8. Animate
+9. hidden
+10. hidden 
+11. UI if time
+
+

@@ -10,7 +10,44 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.5.56</generator>
-<lastBuildDate>Wed, 21 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 23 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog day 20: first game jam begins</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/21-devlog-day20/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I am traveling right now so did not have much time to progress on lessons.<br>
+I checked the theme for the DC game jam when it came out <a href="https://itch.io/jam/district-jam-5" class="uri">https://itch.io/jam/district-jam-5</a>.<br>
+Did some brainstorming with friends and on my own.<br>
+Also figured out how to launch nvim as script editor from with Godot on creating/edit scripts.<br>
+Lastly came up with a plan:</p>
+<ol type="1">
+<li>Figure out git in Godot editor</li>
+<li>Pureref vision board of characers like calcifer and charmander …</li>
+<li>Inkscape make some rough drawings on inkscape of the main character</li>
+<li>Hand draw some ideas for the background abd stage</li>
+<li>Get Erica involved with some sound and music ideas based on the setting</li>
+<li>Sprite movement</li>
+<li>Practice export game build</li>
+<li>Animate</li>
+<li>hidden</li>
+<li>hidden</li>
+<li>UI if time</li>
+</ol>
+
+
+
+ ]]></description>
+  <category>gamedev</category>
+  <category>gamejam</category>
+  <guid>https://evanlesmez.com/posts/21-devlog-day20/</guid>
+  <pubDate>Fri, 23 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog Day 19: kickstart.nvim and a lil Godot</title>
   <dc:creator>Evan Lesmez</dc:creator>
@@ -2015,115 +2052,6 @@ I’ll try to keep these short and to the point in 250ish words.</p>
   <category>tech</category>
   <guid>https://evanlesmez.com/posts/02-devlog-day1/</guid>
   <pubDate>Tue, 30 Jul 2024 04:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Algorithms inherit the prejudices of their creators and society.</title>
-  <dc:creator>Evan Lesmez</dc:creator>
-  <link>https://evanlesmez.com/posts/01-algorithms-inherit-bias/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/ibm-ceo-tom-watson-sr-with-adolf.png" class="img-fluid" alt="IBM CEO Tom Watson Sr.&nbsp;with Adolf"><br>
-<em>IBM leadership with Adolf Hitler</em></p>
-<p>In 1939, under the direction of its president, Thomas Watson, IBM released specialized alphabetizing machines.<br>
-These machines along with other IBM products played a pivotal role in organizing the deportation of Polish Jews for Nazi Germany.<br>
-The IBM leadership didn’t just passively supply; they actively marketed their technology directly to Hitler and his top officials.<br>
-Just a few years prior, IBM’s CEO, Tom Watson Sr., had even been honored with a “Service to the Reich” medal.<br>
-The company implemented a punch card system to track the method of execution and the ethnicity of each victim.<br>
-And to ensure these machines ran efficiently, IBM staff were often present on-site at concentration camps for operation and maintenance.<br>
-IBM thrived financially and technologically, but at what cost to humanity?</p>
-<p><img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/ibm-concentration-camp-punchcard.jpeg" class="img-fluid" alt="IBM concentration camp punch-card"><br>
-<em>IBM concentration camp punch-card</em> - <a href="https://github.com/fastai/fastbook/blob/master/03_ethics.ipynb">Source</a></p>
-<p>We are all aware of the horrors of the holocaust and can agree IBM’s involvement is an egregious example of focusing on technology without care to its impact on society.<br>
-Nowadays we are fortunate enough to be in, for the most part, more peaceful times.<br>
-However the same ethical questions still arise with development of new technology everyday that changes the way we interact with the world.<br>
-The impact of newer tech is often less obvious.</p>
-<p>It is clear that directly cooperating with genocidal regimes like the case of IBM or skirting public safety regulations like Theranos with their “one drop of blood” medical diagnostic machines are both extremely unethical decisions.<br>
-Compare those examples to the common modern case of a recommendation algorithm running on a computer in a distant server farm that chooses what content people see on a website or app.<br>
-At face value it seems much more benign right?<br>
-Algorithms must be more objective because they are based on data, and in the case of machine learning algorithms, lots and lots of data at that.</p>
-<p>It might seem that way at first until you discover that your video recommendation system is curating playlists of prepubescent partially clothed children to drive engagement of pedophiles on your platform.<br>
-<a href="https://www.nytimes.com/2019/06/03/world/americas/youtube-pedophiles.html">This was a very real problem caused by YouTube</a> for the families who had uploaded their innocent home videos of their kids simply enjoying a pool day.<br>
-The objectives of the algorithm behind Youtube’s pedophilia curation was actually quite similar to the that of IBM and Theranos.<br>
-Similar to IBM’s CEO Tom Watson and Theranos CEO Elizabeth Holmes, the algorithm strived to optimize it’s performance metrics by any means necessary.</p>
-<p>When the algorithm received positive feedback by seeing the time spent by a user <em>extremely</em> interested in videos of partially clothed children increase, it was reinforced to serve them more of that content.<br>
-When Tom Watson saw IBM profits soar when selling services to Nazi Germany, he was positively reinforced to develop more efficient systems to support genocide.<br>
-When Elizabeth Holmes saw herself becoming more and more famous by deceiving patients, employees, and investors, she was positively reinforced to keep the act going.</p>
-<p>Each of these actors was caught in a feedback loop that rewarded them for helping the depraved at the expense of the innocent.<br>
-Each actor lacked a moral compass to point them in a better direction for the good of society.<br>
-Lastly, each actor did not act alone and had supporting actors that were privy to was going on.<br>
-They too bear responsibility as they were complicit in the ethical violations of their company.</p>
-<p>A major difference to consider between these actors is that even though algorithms are biased like people, they are not <em>actually</em> people (yet).<br>
-However, they still inherit the biases of the people that created and trained them.</p>
-<section id="types-of-biases" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-biases">Types of biases</h2>
-<p>Let’s define a few different types of biases inherited from people to machine learning algorithms.<br>
-<img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/pipeline_diagram.svg" class="img-fluid" alt="ML bias pipeline"></p>
-<p><strong>Historical bias</strong><br>
-People, processes, and society are inherently biased stemming from the past which effects all datasets.</p>
-<p>Example <em>race bias</em>:<br>
-Black people have historically been victim to racism by white people and this is reflected in data used by algorithms.<br>
-The COMPAS algorithm that determines sentencing and bail in the US showed obvious racial bias by disproportionately labeling black Americans as higher risk to re-offend than white Americans by ~20% despite the results showing the predictions should be much closer.<br>
-<img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/pred-fials-for-black-defandants.png" class="img-fluid" alt="2x2 table of black vs white defendant outcomes"></p>
-<p><strong>Measurement bias</strong><br>
-When we measure the wrong thing or measure it in the wrong way, models make mistakes.</p>
-<p>Example:<br>
-Predictive models trained on electronic health records determined which factors such as “colonoscopy” and “accidental injury” are highly correlated to being diagnosed with a stroke.<br>
-The real prediction here is that people who are more likely to go to doctors <em>at all</em> are more likely get diagnosed with a stroke because they show up more often in the first place.</p>
-<p><strong>Representation bias</strong><br>
-This one was confusing to me as it seems awfully similar to historical bias.<br>
-The idea is that models amplifies the existing bias in the dataset they are trained on.</p>
-<p>Example:<br>
-In society there are some occupations that employ more women than men.<br>
-For example, there are more women who are nurses and there are more men who are pastors.<br>
-Occupation prediction models not only demonstrated the existing gender discrepancy across occupations but also over amplified the numbers.<br>
-Women were more likely to be nurses while men more likely to be rappers both at a significantly higher margin than was actually true in the training data.<br>
-<img src="https://evanlesmez.com/posts/01-algorithms-inherit-bias/gender-occupation-gap.png" class="img-fluid" alt="Gender occupation prediction gap"></p>
-<p>That example seems similar to the COMPAS algorithm as both seem to stem from historical bias.<br>
-One exhibits gender bias and the other racial.<br>
-Maybe the difference lies in how large the amplification of bias between predictions and the training data is.</p>
-</section>
-<section id="responsibility-of-data-engineers" class="level2">
-<h2 class="anchored" data-anchor-id="responsibility-of-data-engineers">Responsibility of data engineers</h2>
-<p>The consideration of ethics maybe isn’t for everyone.<br>
-It is more suited to people with a growth mindset who want to better themselves along with the world around them.<br>
-People who spent the time to get through school and work their way into the data science field are definitely capable of logically analyzing complex systems.<br>
-It is a matter of devoting some of their brain power they spent years building to think about how the model they are training can better serve people and animals outside of their company rather than just the ones within.</p>
-<p>There are no 100% correct answers when it comes to handling biases ethically.<br>
-However, there is value in weighing which approaches are better and which are worse.<br>
-Although algorithms are not people, hopefully you are convinced that they do inherit the biases of people.<br>
-In comparison to traditional hardware tech, algorithms are:</p>
-<ul>
-<li>cheap to develop</li>
-<li>more likely to be implemented without an appeals process</li>
-<li>capable of scaling quickly</li>
-</ul>
-<p>This makes them more volatile and prone to feedback loops that can be highly detrimental.</p>
-<p>What are some counter measures data engineers can take?</p>
-<ul>
-<li>Make algorithms more transparent and able to be visualized by non-technical people</li>
-<li>Use more gradual deployment processes with more (diverse) human verification at steps along the way</li>
-<li>Think about what bias is in training data and how to mitigate it such as sometimes choosing to omit some biased factors such as ‘gender’<br>
-</li>
-<li>Ask questions like “How might future generations be affected by this project?” or “Which option will produce the most good and do the least harm?”</li>
-</ul>
-<p>Thanks for reading all the way through!<br>
-If you are curious about reading on about other cases of algorithms gone wrong these were interesting reads:</p>
-<p><a href="https://arxiv.org/abs/1301.6822">Discrimination in Online Ad Delivery by Latanya Sweeney</a><br>
-<a href="https://www.theverge.com/2018/3/21/17144260/healthcare-medicaid-algorithm-arkansas-cerebral-palsy">What happens when an algorithm cuts your health care</a></p>
-
-
-</section>
-
- ]]></description>
-  <category>ethics</category>
-  <category>ai</category>
-  <category>tech</category>
-  <guid>https://evanlesmez.com/posts/01-algorithms-inherit-bias/</guid>
-  <pubDate>Tue, 17 Oct 2023 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
