@@ -1,0 +1,35 @@
+---
+title: "Devlog day 21: doodling a character idea and completing the Godot loot series"
+description: "Doodls and Godot looting"
+author: "Evan Lesmez"
+date: "2024-08-26"
+categories:
+  - gamedev
+  - gamejam
+  - drawing 
+---
+
+<img src="./pistachio-doodle.jpg" style="width:50%">  
+
+As you can see I am not a particularly gifted artist but for the game jam I need to make an idea for a character.  
+To avoid needing details I covered most of the face with "mask" so all I would need is some basic eyes.  
+Drew inspiration from Hollow Knight, pikmin, and EVA from Walle all as inspiration for simple but pleasant character designs to emulate.  
+I threw pics of all those plus more on Krita to use as reference images.  
+Now I need to digitize this image and create some variations for sprite animations.  
+Plus the stage and background but I'll get there hopefully.  
+
+## Godot loot done
+I comleted the full module today.  
+The last bits were wrapping the ship around the edge of the screen when it hit.  
+Use `wrapf` for that with the the viewport size `get_viewport_rect`.  
+
+Last bit was to make the items appear to float even though their collision shapes did not actually follow the floatiness.  
+There is a class called `Tween` that is dedicated to tweaking properities of nodes to add some animation effects in place.  
+`create_tween`  
+`tween.set_trans(<TWEEN_TRANS_ENUM>)` (choose which type of interpolation to give smoothness)  
+`tween.tween_property(sprite_2d, "position" or prop, new_value, duration)`  
+`tween.set_loops()` loop the tween animation forever or set a value  
+
+
+Thanks for reading!  
+<img src="https://media.tenor.com/zn6_qXYxgI4AAAAC/mugen-samurai-champloo.gif" width="33%">

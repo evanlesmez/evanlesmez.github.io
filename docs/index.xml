@@ -10,7 +10,48 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.5.56</generator>
-<lastBuildDate>Fri, 23 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 26 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog day 21: doodling a character idea and completing the Godot loot series</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/22-devlog-day21/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://evanlesmez.com/posts/22-devlog-day21/pistachio-doodle.jpg" style="width:50%"></p>
+<p>As you can see I am not a particularly gifted artist but for the game jam I need to make an idea for a character.<br>
+To avoid needing details I covered most of the face with “mask” so all I would need is some basic eyes.<br>
+Drew inspiration from Hollow Knight, pikmin, and EVA from Walle all as inspiration for simple but pleasant character designs to emulate.<br>
+I threw pics of all those plus more on Krita to use as reference images.<br>
+Now I need to digitize this image and create some variations for sprite animations.<br>
+Plus the stage and background but I’ll get there hopefully.</p>
+<section id="godot-loot-done" class="level2">
+<h2 class="anchored" data-anchor-id="godot-loot-done">Godot loot done</h2>
+<p>I comleted the full module today.<br>
+The last bits were wrapping the ship around the edge of the screen when it hit.<br>
+Use <code>wrapf</code> for that with the the viewport size <code>get_viewport_rect</code>.</p>
+<p>Last bit was to make the items appear to float even though their collision shapes did not actually follow the floatiness.<br>
+There is a class called <code>Tween</code> that is dedicated to tweaking properities of nodes to add some animation effects in place.<br>
+<code>create_tween</code><br>
+<code>tween.set_trans(&lt;TWEEN_TRANS_ENUM&gt;)</code> (choose which type of interpolation to give smoothness)<br>
+<code>tween.tween_property(sprite_2d, "position" or prop, new_value, duration)</code><br>
+<code>tween.set_loops()</code> loop the tween animation forever or set a value</p>
+<p>Thanks for reading!<br>
+<img src="https://media.tenor.com/zn6_qXYxgI4AAAAC/mugen-samurai-champloo.gif" width="33%"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>gamedev</category>
+  <category>gamejam</category>
+  <category>drawing</category>
+  <guid>https://evanlesmez.com/posts/22-devlog-day21/</guid>
+  <pubDate>Mon, 26 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog day 20: first game jam begins</title>
   <dc:creator>Evan Lesmez</dc:creator>
@@ -2003,55 +2044,6 @@ Found some Godot 4 Vim binding plugins for GDScript which will be helpful.</p>
   <category>tech</category>
   <guid>https://evanlesmez.com/posts/03-devlog-day2/</guid>
   <pubDate>Wed, 31 Jul 2024 04:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Devlog Day 1</title>
-  <dc:creator>Evan Lesmez</dc:creator>
-  <link>https://evanlesmez.com/posts/02-devlog-day1/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<strong>Disclaimer:</strong> Today was not actually my first day of game development nor Godot.<br>
-I actually went to nerdy chess and “code” camp back in elementary school and built a simple 2d shooter game.<br>
-A several years ago I tinkered with Unity for about a month but lost interest as work at the startup I was with picked up a lot.<br>
-Two years ago I discovered Godot and went through the getting started docs.<br>
-I built a <a href="https://streamable.com/6baba6">simple 2D dodge the creeps game</a>.<br>
-
-<div style="text-align: center;padding:10px 0;">
-<img src="https://evanlesmez.com/posts/02-devlog-day1/dodge_the_creeps_screenshot.png" style="height:400px; margin: 0 auto">
-</div>
-<p>Yesterday I rebuilt it following along with a <a href="https://www.gdquest.com/tutorial/godot/learning-paths/getting-started-in-2021/chapter/10.your-first-2d-game/">GDQuest tutorial</a> and that brings us to today.<br>
-I am starting the <a href="https://school.gdquest.com/products/learn_2d_gamedev_godot_4">Learn 2D Gamedev Godot 4</a> course.</p>
-<p>Why am I getting back into gamedev and why am I writing this down?<br>
-As to why gamedev:<br>
-I have always loved games since I was a kid like Super Smash Bros Melee, Sly Cooper, FIFA, Uncharted 2, CoD Modern Warfare 2, and League of Legends.<br>
-I always thought it would be fun to try making one of the several game ideas I have jotted down in my notebooks over the years.<br>
-I now know how to code decently well.<br>
-I think games are a valuable way to spread ideas, especially on issues I care about like veganism, animal activism, and conservation.</p>
-<p>Why am I writing this down?<br>
-Mostly to keep myself accountable.<br>
-As echoed in both the fastai and GDQuest curriculum, social pressure is inevitablely motivating for every single person wether we admit it or not.<br>
-As I don’t have a group of study partners nearby to work on either of those, I am resorting to posting a daily blog that I will share on social media.<br>
-I’ll try to keep these short and to the point in 250ish words.</p>
-<p>What I learned so far on gamdev and Godot:<br>
-* pixel art isn’t as easy as it looks<br>
-* vector art is great to start with for beginners making their earliest games<br>
-* signals are a convenient design pattern to broadcast events from different game objects to each other to determine what should happen next<br>
-* rendering animations for some basic sprites is way simpler than I thought it would be (at least in Godot)<br>
-* music and sounds add a lot to how a game feels</p>
-<p>For tomorrow I want to continue with the course and hopefully have finished answering the fastai end of chapter questions I have put off for a while.</p>
-
-
-
- ]]></description>
-  <category>gamedev</category>
-  <category>video games</category>
-  <category>tech</category>
-  <guid>https://evanlesmez.com/posts/02-devlog-day1/</guid>
-  <pubDate>Tue, 30 Jul 2024 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
