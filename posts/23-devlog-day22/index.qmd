@@ -1,5 +1,5 @@
 ---
-title: "Devlog day 23: vim motions and struggling with Godot"
+title: "Devlog day 22: vim motions and struggling with Godot"
 author: "Evan Lesmez"
 description: "Some vim motions and struggling with Godot"
 date: "2024-08-28"
