@@ -1,0 +1,59 @@
+---
+title: "Devlog day 23: vim motions and struggling with Godot"
+author: "Evan Lesmez"
+description: "Some vim motions and struggling with Godot"
+date: "2024-08-28"
+categories:
+  - vim
+  - godot
+  - gamedev
+---
+## Vim
+
+Display line movement  
+
+```vim
+gj # go down one display line useful for line wrapping
+gk # go up one display line useful for line wrapping  
+g0 # first char of display line
+g^ # first nonblank char of display line
+g$ # end of display line
+```
+word-wise movement  
+
+```vim
+w # forward start of next word
+b # backward to start of current or prev word
+e # end of current or next word
+ge # backward to end of current or prev word
+```
+
+words are smaller than WORDS  
+
+```vim
+w # move word wise (sequenmces seperated by "." " " "," "'" ...)
+W # move WORD wise (sequences seperated by blank space)
+```
+
+## Godot
+Worked on the game for the "sizzle" themed gamejam.  
+My game is most certainly not sizzling.  
+But at least I got a player moving after struggling with `TileSet` and `TileMapLayer` for way too long.  
+Tileset seems to be a .png file that provides seperated sprites to be used for repeating patterns aka tiles.  
+TileMapLayer takes the art from a TileSet and give it important properties like Physics for collisions so a character does not fall through the floor.  
+Also important, they allow selecting tiles to then paint into the scene.  
+
+After painting some basic tiles I borrowed from [kenney.nl](https://kenney.nl/assets/abstract-platformer), I added some basic player movement for jumping and moving left and right.  
+Took me a few minutes to find `Input.is_action_pressed` again in the docs.  
+Once I did though, I then ran into a new problem.  
+I forgot about gravity.  
+
+<img src="./sizzle-game-prog1.gif" style="width:100%">
+
+## Misc
+`screenkey` is a cool tool to record keys being entered.  
+Learned about it from the Primeagen.  
+
+Thanks for reading!  
+
+<img src="https://www.icegif.com/wp-content/uploads/2023/06/icegif-469.gif" style="width:50%">

@@ -10,7 +10,65 @@
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
 <generator>quarto-1.5.56</generator>
-<lastBuildDate>Mon, 26 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 28 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Devlog day 23: vim motions and struggling with Godot</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/23-devlog-day22/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="vim" class="level2">
+<h2 class="anchored" data-anchor-id="vim">Vim</h2>
+<p>Display line movement</p>
+<pre class="vim"><code>gj # go down one display line useful for line wrapping
+gk # go up one display line useful for line wrapping  
+g0 # first char of display line
+g^ # first nonblank char of display line
+g$ # end of display line</code></pre>
+<p>word-wise movement</p>
+<pre class="vim"><code>w # forward start of next word
+b # backward to start of current or prev word
+e # end of current or next word
+ge # backward to end of current or prev word</code></pre>
+<p>words are smaller than WORDS</p>
+<pre class="vim"><code>w # move word wise (sequenmces seperated by "." " " "," "'" ...)
+W # move WORD wise (sequences seperated by blank space)</code></pre>
+</section>
+<section id="godot" class="level2">
+<h2 class="anchored" data-anchor-id="godot">Godot</h2>
+<p>Worked on the game for the “sizzle” themed gamejam.<br>
+My game is most certainly not sizzling.<br>
+But at least I got a player moving after struggling with <code>TileSet</code> and <code>TileMapLayer</code> for way too long.<br>
+Tileset seems to be a .png file that provides seperated sprites to be used for repeating patterns aka tiles.<br>
+TileMapLayer takes the art from a TileSet and give it important properties like Physics for collisions so a character does not fall through the floor.<br>
+Also important, they allow selecting tiles to then paint into the scene.</p>
+<p>After painting some basic tiles I borrowed from <a href="https://kenney.nl/assets/abstract-platformer">kenney.nl</a>, I added some basic player movement for jumping and moving left and right.<br>
+Took me a few minutes to find <code>Input.is_action_pressed</code> again in the docs.<br>
+Once I did though, I then ran into a new problem.<br>
+I forgot about gravity.</p>
+<p><img src="https://evanlesmez.com/posts/23-devlog-day22/sizzle-game-prog1.gif" style="width:100%"></p>
+</section>
+<section id="misc" class="level2">
+<h2 class="anchored" data-anchor-id="misc">Misc</h2>
+<p><code>screenkey</code> is a cool tool to record keys being entered.<br>
+Learned about it from the Primeagen.</p>
+<p>Thanks for reading!</p>
+<p><img src="https://www.icegif.com/wp-content/uploads/2023/06/icegif-469.gif" style="width:50%"></p>
+
+
+</section>
+
+ ]]></description>
+  <category>vim</category>
+  <category>godot</category>
+  <category>gamedev</category>
+  <guid>https://evanlesmez.com/posts/23-devlog-day22/</guid>
+  <pubDate>Wed, 28 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog day 21: doodling a character idea and completing the Godot loot series</title>
   <dc:creator>Evan Lesmez</dc:creator>
@@ -2008,41 +2066,6 @@ font-style: inherit;">float</span>)</span></code></pre></div>
   <category>video games</category>
   <category>tech</category>
   <guid>https://evanlesmez.com/posts/04-devlog-day3/</guid>
-  <pubDate>Wed, 31 Jul 2024 04:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Devlog Day 2</title>
-  <dc:creator>Evan Lesmez</dc:creator>
-  <link>https://evanlesmez.com/posts/03-devlog-day2/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://evanlesmez.com/posts/03-devlog-day2/editor-screenshot.png" style="height: 600px"></p>
-<p>Today I completed the tour of Godot game made by the GDQuest creators.<br>
-Learned about TileMap nodes to create repeating visual 2D blocks used in old games like Zelda.<br>
-Used “Terrains” to create instances of the TileMaps faster.<br>
-Collision shapes like invisible walls can be represented by shapes in the scene editor to convey that a space is off limits.<br>
-Repeated using a signal to hook up a player node to a UI health bar when an enemy did damage.</p>
-<p>Note:<br>
-Backgrounds add a lot to the feel of a game as does looting a chest.</p>
-<p>I asked a question in the last lesson about any gamedev podcast recommendations.<br>
-Not exactly gamedev, but the creator of the course recommended theprimegean so I watched a few videos today about Vim and made me want to get back on switching to neovim as my editor.<br>
-Currently I use vim mode wherever possible such as VSCode, Jupyter Lab, Obsidian …<br>
-I did setup neovim with some Lua plugins but was still too slow compared to working in VS Code for basic things like creating a new file, copying files, searching through all the files for a class…<br>
-But might be time to start trying again.<br>
-Found some Godot 4 Vim binding plugins for GDScript which will be helpful.</p>
-<p>Tomorrow I will be moving onto the <a href="https://school.gdquest.com/courses/learn_2d_gamedev_godot_4/learn_gdscript/learn_gdscript_app">next lesson on GDScript</a>.</p>
-
-
-
- ]]></description>
-  <category>gamedev</category>
-  <category>video games</category>
-  <category>tech</category>
-  <guid>https://evanlesmez.com/posts/03-devlog-day2/</guid>
   <pubDate>Wed, 31 Jul 2024 04:00:00 GMT</pubDate>
 </item>
 </channel>
