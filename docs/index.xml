@@ -9,8 +9,157 @@
 <link>https://evanlesmez.com/</link>
 <atom:link href="https://evanlesmez.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Evan Lesmez&#39;s blog</description>
-<generator>quarto-1.5.56</generator>
-<lastBuildDate>Wed, 28 Aug 2024 04:00:00 GMT</lastBuildDate>
+<generator>quarto-1.7.6</generator>
+<lastBuildDate>Fri, 24 Jan 2025 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Back to FastAI</title>
+  <dc:creator>Evan Lesmez</dc:creator>
+  <link>https://evanlesmez.com/posts/24-back-to-fastai/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="getting-back-into-fastai" class="level1">
+<h1>Getting back into FastAI</h1>
+<p>I lost some momentum towards the end of the year on game dev and learning on my own free time in general.<br>
+I get curious about many projects and it tends to keep me from completing most of them fully.<br>
+So I am getting back into FastAI to get through the first lecture series and corresponding half of the book.</p>
+<p>I started by watching <a href="https://www.youtube.com/watch?v=gGxe2mN3kAg">leson 0</a> for the third time to get motivated.<br>
+The premise is “to finish the damn course”.<br>
+Beyond that it reminded me on some good strategies to approach learning in general.<br>
+They provided this graphic:</p>
+<p><img src="https://evanlesmez.com/posts/24-back-to-fastai/how-to-do-fastai-lesson.png" width="100%"></p>
+<p>The process I took away from that was:</p>
+<ol type="1">
+<li>Watch lecture all the way through</li>
+<li>Go back and run the lecture notebook(s) while watching with pauses</li>
+<li>Go through the book chapter(s) notebook(s)</li>
+<li>Reproduce results by using the clean notebook
+<ul>
+<li>fastbook/clean</li>
+<li>b4 run each cell ask what is this for and what will it output?</li>
+<li>try from scratch if you feel up for it</li>
+</ul></li>
+<li>Answer book end of chapter questions as much as possible without the book.</li>
+<li>Repeat model and pipeline implementations from lecture and book with different dataset if you feel like it’s applicable</li>
+<li>Study chapters in book through to next lesson</li>
+</ol>
+<p>With that in mind I went back to lesson 1 to run th clean version (no code cell outputs nor explanation text shown) of the notebook and ran on my gaming PC.<br>
+Some quick notes on that:</p>
+<ul>
+<li>need to install some packages to use nvidia GPU like cuda and nvidia tools</li>
+<li>fastbook breaks past python3.9 so use that</li>
+<li><code>watch nvidia-smi</code> is useful tool to see if the GPU is being used and how much memory</li>
+<li>the general process was to download, untar (folder file) and unzip (decompress) an image or text dataset online, put in a <code>DataLoader</code> object with label detection function and other configurations, and then pass the dataloader to a learner which can use pre-existing models for transfer learning</li>
+</ul>
+<p>Last quick fun note is that I improved my timer script for working in the background.<br>
+I use a timer bash script to time work on projects/tasks too let me know when to stand up to take a break.<br>
+<code>mpg123</code> and <code>mplayer</code> and other linux tools don’t play well with running as background processes.<br>
+However, <code>mpv</code> works great even backgrounded.</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#!/bin/bash</span></span>
+<span id="cb1-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-euo</span> pipefail</span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># for debugging</span></span>
+<span id="cb1-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># set -x</span></span>
+<span id="cb1-5"><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">dur</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">${1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:-</span>25m<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb1-6"></span>
+<span id="cb1-7"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">notify-send</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$dur</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> timer started at </span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">date</span> +%H:%M:%S<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sleep</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$dur</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-9"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">mpv</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--no-terminal</span> ~/.scripts/assets/mw2-lvl.mp3</span>
+<span id="cb1-10"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">notify-send</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-w</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Stand up"</span></span></code></pre></div>
+<p>So if I want to run a timer for an hour I would do</p>
+<p><code>.scripts/timer.sh 60m &amp;</code></p>
+<p>Run <code>jobs</code> to see background jobs and you would see something like this</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">[1]+</span>  Running                 ./.scripts/timer.sh 60m <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">&amp;</span></span></code></pre></div>
+<p>You can foreground it with <code>fg</code> and then background it again with Ctrl-Z.<br>
+Make sure to run <code>bg</code> though because Ctrl-Z stops the execution.</p>
+<p>And when I get antsy and want to know how long the timer has been running for</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ps</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-eo</span> pid,etime,cmd <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">|</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">grep</span> timer</span></code></pre></div>
+<p>Outputs something like the following with the time the process has been running in the middle col:</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1">  <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">30271</span>       02:14 /bin/bash ./.scripts/timer.sh 60m</span></code></pre></div>
+<p>The audio file I am playing btw is the Modern Warfare 2 level up sound that I heard a lot back in highschool.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>ai</category>
+  <category>fastai</category>
+  <category>deeplearning</category>
+  <guid>https://evanlesmez.com/posts/24-back-to-fastai/</guid>
+  <pubDate>Fri, 24 Jan 2025 05:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Devlog day 22: vim motions and struggling with Godot</title>
   <dc:creator>Evan Lesmez</dc:creator>
@@ -2025,48 +2174,6 @@ Most importantly, GDScript is basically Python.</p>
   <category>tech</category>
   <guid>https://evanlesmez.com/posts/05-devlog-day4/</guid>
   <pubDate>Sat, 03 Aug 2024 04:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Devlog Day 3</title>
-  <dc:creator>Evan Lesmez</dc:creator>
-  <link>https://evanlesmez.com/posts/04-devlog-day3/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Today I learned about GDScript, Godot’s scripting language.<br>
-It looks like a blend of Python and Javascript.<br>
-Python because of the indentation and Javascript because of the var keyword used for creating variables.<br>
-I did not have as much time today so I did about 3 of the starter lessons. Most of it was a little too simple but did at least learn some syntax and a few builtin functions.</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># shows a game entity like a character</span></span>
-<span id="cb1-2">show()</span>
-<span id="cb1-3"></span>
-<span id="cb1-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># hides the entity</span></span>
-<span id="cb1-5">hide()</span>
-<span id="cb1-6"></span>
-<span id="cb1-7"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># what you would expect</span></span>
-<span id="cb1-8">rotate(radians:<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span>)</span></code></pre></div>
-<p>Used those to make this turtle draw some rectangles.</p>
-<p><img src="https://evanlesmez.com/posts/04-devlog-day3/turtle-game.png" style="width: 700px"></p>
-
-
-
- ]]></description>
-  <category>gamedev</category>
-  <category>video games</category>
-  <category>tech</category>
-  <guid>https://evanlesmez.com/posts/04-devlog-day3/</guid>
-  <pubDate>Wed, 31 Jul 2024 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

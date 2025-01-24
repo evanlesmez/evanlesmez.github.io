@@ -1,11 +1,12 @@
+jupyterlab
 jupyterlab-code-formatter
 black
 isort
 jupyterlab-vim
-aquirdturtle_collapsible_headings
 jupyterlab-drawio
 jupyter-fs
 jupyterlab-spellchecker
 jupyterlab-git
 jupyterlab-quarto
 # 'python-lsp-server[all]'
+debugpy

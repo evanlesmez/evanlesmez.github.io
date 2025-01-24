@@ -2,7 +2,7 @@
 title: "Devlog Day 3"
 description: "GDScript"
 author: "Evan Lesmez"
-date: "2024-07-31"
+date: "2024-08-01"
 categories:
   - gamedev
   - video games

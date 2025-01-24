@@ -26,4 +26,3 @@ Lastly came up with a plan:
 10. hidden 
 11. UI if time
 
-

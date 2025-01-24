@@ -1,0 +1,87 @@
+---
+title: "Back to FastAI"
+author: "Evan Lesmez"
+description: "Getting back into FastAI"
+date: "2025-01-24"
+categories:
+    - ai
+    - fastai
+    - deeplearning
+---
+# Getting back into FastAI
+I lost some momentum towards the end of the year on game dev and learning on my own free time in general.  
+I get curious about many projects and it tends to keep me from completing most of them fully.  
+So I am getting back into FastAI to get through the first lecture series and corresponding half of the book.  
+
+I started by watching [leson 0](https://www.youtube.com/watch?v=gGxe2mN3kAg) for the third time to get motivated.  
+The premise is "to finish the damn course".  
+Beyond that it reminded me on some good strategies to approach learning in general.  
+They provided this graphic:
+
+<img src="./how-to-do-fastai-lesson.png" width="100%"/>
+
+The process I took away from that was:  
+
+1. Watch lecture all the way through
+2. Go back and run the lecture notebook(s) while watching with pauses
+3. Go through the book chapter(s) notebook(s)
+4. Reproduce results by using the clean notebook
+	- fastbook/clean
+	- b4 run each cell ask what is this for and what will it output?
+	- try from scratch if you feel up for it
+5. Answer book end of chapter questions as much as possible without the book.
+6. Repeat model and pipeline implementations from lecture and book with different dataset if you feel like it's applicable
+7. Study chapters in book through to next lesson
+
+With that in mind I went back to lesson 1 to run th clean version (no code cell outputs nor explanation text shown) of the notebook and ran on my gaming PC.  
+Some quick notes on that:  
+
+- need to install some packages to use nvidia GPU like cuda and nvidia tools
+- fastbook breaks past python3.9 so use that
+- `watch nvidia-smi` is useful tool to see if the GPU is being used and how much memory
+- the general process was to download, untar (folder file) and unzip (decompress) an image or text dataset online, put in a `DataLoader` object with label detection function and other configurations, and then pass the dataloader to a learner which can use pre-existing models for transfer learning
+
+
+Last quick fun note is that I improved my timer script for working in the background.  
+I use a timer bash script to time work on projects/tasks too let me know when to stand up to take a break.  
+`mpg123` and `mplayer` and other linux tools don't play well with running as background processes.  
+However, `mpv` works great even backgrounded.  
+
+```sh
+#!/bin/bash
+set -euo pipefail
+# for debugging
+# set -x
+dur=${1:-25m}
+
+notify-send "$dur timer started at $(date +%H:%M:%S)"
+sleep "$dur"
+mpv --no-terminal ~/.scripts/assets/mw2-lvl.mp3
+notify-send -w "Stand up"
+```
+So if I want to run a timer for an hour I would do
+
+`.scripts/timer.sh 60m &`
+
+Run `jobs` to see background jobs and you would see something like this
+
+```sh
+[1]+  Running                 ./.scripts/timer.sh 60m &
+```
+
+You can foreground it with `fg` and then background it again with Ctrl-Z.  
+Make sure to run `bg` though because Ctrl-Z stops the execution.  
+
+And when I get antsy and want to know how long the timer has been running for 
+
+```sh
+ps -eo pid,etime,cmd | grep timer
+```
+
+Outputs something like the following with the time the process has been running in the middle col: 
+
+```sh
+  30271       02:14 /bin/bash ./.scripts/timer.sh 60m
+```
+
+The audio file I am playing btw is the Modern Warfare 2 level up sound that I heard a lot back in highschool.  
